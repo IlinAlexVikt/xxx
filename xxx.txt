@@ -1,6 +1,6 @@
 #profile-title: XXX VPN ⚡
 #profile-update-interval: 1
-#subscription-userinfo: upload=1073741824000; download=1073741824000; total=10737418240000; expire=1999999999
+#subscription-userinfo: upload=1073741824000; download=1073741824000; total=10737418240000; expire=1784444271
 #support-url: https://t.me/xxx
 #profile-web-page-url: https://github.com/xxx
 
