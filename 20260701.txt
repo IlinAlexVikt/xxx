@@ -1,9 +1,9 @@
-#profile-title: 01/07/2026 VPN ⚡
+#profile-title: WHITE LISTS VPN ⚡
 #profile-update-interval: 1
 #subscription-userinfo: upload=1073741824000; download=1073741824000; total=10737418240000; expire=1782864000
 #support-url: https://
 #profile-web-page-url: https://
-#announce: "Привет халявщики"
+#announce: "Привет халявщики и тунеядцы"
  
 vless://457d9c9f-6b8a-45d5-97aa-58ec708fc1c3@176.108.243.74:220?security=none&type=tcp&headerType=&path=&host=#%F0%9F%87%AB%F0%9F%87%AE%20Finland%20%7C%20%F0%9F%8C%90%20%5B%2ACIDR%5D
 vless://bodoargovpn@argoovpn.imanaghapour.ir:24283?encryption=none&fp=chrome&pbk=o_o1PS9FBTa1BoUZnBfL5UxQ7ArehI7DtySEXFqQPjU&security=reality&sid=d18ac7&sni=www.yahoo.com&spx=/eMpYqI2gPmvxO81&type=tcp#%F0%9F%87%AB%F0%9F%87%B7%20France%20%7C%20%F0%9F%8C%90%20%5B%2ACIDR%5D
