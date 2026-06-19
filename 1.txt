@@ -1,3 +1,5 @@
+
+[
 {
 #profile-title: IrTg 03 VPN ⚡
 #profile-update-interval: 1
@@ -6,9 +8,6 @@
 #profile-web-page-url: https://
 #announce: "Привет халявщики и тунеядцы"
 },
-
-[
-
   {
   "dns": {
     "servers": [
