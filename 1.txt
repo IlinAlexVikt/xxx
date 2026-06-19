@@ -5,8 +5,6 @@
 #profile-web-page-url: https://
 #announce: "Привет халявщики и тунеядцы"
 
-vless://
-
 {
   "dns": {
     "servers": [
