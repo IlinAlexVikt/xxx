@@ -1,4 +1,4 @@
-[{
+[
     "title": "SS 02 VPN ⚡",
     "updateInterval": 1,
     "userinfo": {
@@ -10,7 +10,7 @@
     "supportUrl": "https://support.example.com",
     "webPageUrl": "https://myvpnservice.com",
     "announcement": "Привет халявщики и тунеядцы"
-  }],
+  ],
 
 [
 
