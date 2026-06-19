@@ -89,6 +89,1044 @@
           "keyword:lenta"
         ],
         "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "balancerTag": "Super_Balancer"
+      }
+    ],
+    "balancers": [
+      {
+        "tag": "Super_Balancer",
+        "selector": [
+          "proxy"
+        ],
+        "strategy": {
+          "type": "roundRobin"
+        },
+        "fallbackTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "ya-4.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "max.ru",
+          "publicKey": "bzX8l1h-ze1eML9stiVhe0DsotjtW4WOkjkk4eri9BM",
+          "shortId": "dfdbaa7f996dd0e9",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "proxy-2",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "ya-1.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "rutube.ru",
+          "publicKey": "bzX8l1h-ze1eML9stiVhe0DsotjtW4WOkjkk4eri9BM",
+          "shortId": "dfdbaa7f996dd0e9",
+          "fingerprint": "random"
+        }
+      }
+    },
+    {
+      "tag": "proxy-3",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "ya-2.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "yandex.ru",
+          "publicKey": "bzX8l1h-ze1eML9stiVhe0DsotjtW4WOkjkk4eri9BM",
+          "shortId": "dfdbaa7f996dd0e9",
+          "fingerprint": "firefox"
+        }
+      }
+    },
+    {
+      "tag": "proxy-4",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "ya-3.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "kinopoisk.ru",
+          "publicKey": "bzX8l1h-ze1eML9stiVhe0DsotjtW4WOkjkk4eri9BM",
+          "shortId": "dfdbaa7f996dd0e9",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "observatory": {
+    "probeURL": "https://www.gstatic.com/generate_204",
+    "probeInterval": "60s",
+    "subjectSelector": [
+      "proxy"
+    ],
+    "enableConcurrency": true
+  },
+  "remarks": "🇷🇺 LTE | Все операторы-7",
+  "meta": {
+    "serverDescription": "Lite"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "keyword:vk",
+          "keyword:userapi",
+          "keyword:mycdn.me",
+          "keyword:mail.ru",
+          "keyword:imgsmail",
+          "keyword:ok.ru",
+          "keyword:okcdn.ru",
+          "keyword:yandex",
+          "keyword:ya.ru",
+          "keyword:yastatic",
+          "keyword:kinopoisk",
+          "keyword:kpcdn",
+          "keyword:dzen",
+          "keyword:auto.ru",
+          "keyword:rutube",
+          "keyword:ivi",
+          "keyword:kion",
+          "keyword:okko",
+          "keyword:wink",
+          "keyword:avito",
+          "keyword:ozon",
+          "keyword:wildberries",
+          "keyword:wb.ru",
+          "keyword:megamarket",
+          "keyword:lemanapro",
+          "keyword:magnit",
+          "keyword:5ka",
+          "keyword:perekrestok",
+          "keyword:detmir",
+          "keyword:samokat",
+          "keyword:kuper",
+          "keyword:auchan",
+          "keyword:2gis",
+          "keyword:gismeteo",
+          "keyword:gosuslugi",
+          "keyword:gov.ru",
+          "keyword:gu-st.ru",
+          "keyword:nalog",
+          "keyword:mos.ru",
+          "keyword:goskey",
+          "keyword:rustore",
+          "keyword:sberdevices",
+          "keyword:giga.chat",
+          "keyword:alfa",
+          "keyword:vtb",
+          "keyword:psbank",
+          "keyword:cbr",
+          "keyword:nspk",
+          "keyword:mts",
+          "keyword:megafon",
+          "keyword:beeline",
+          "keyword:tele2",
+          "keyword:t2.ru",
+          "keyword:rzd",
+          "keyword:aeroflot",
+          "keyword:pobeda",
+          "keyword:tutu",
+          "keyword:cdek",
+          "keyword:pochta",
+          "keyword:kaspersky",
+          "keyword:rt.ru",
+          "keyword:hh",
+          "keyword:rambler",
+          "keyword:rbc",
+          "keyword:zvuk.com",
+          "keyword:lenta"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "balancerTag": "Super_Balancer"
+      }
+    ],
+    "balancers": [
+      {
+        "tag": "Super_Balancer",
+        "selector": [
+          "proxy"
+        ],
+        "strategy": {
+          "type": "leastLoad",
+          "settings": {
+            "maxRTT": "1500ms",
+            "expected": 2
+          }
+        },
+        "fallbackTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "178.176.128.128",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": ""
+                }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "mamd13414-1.fastcon.cc",
+          "path": "/clips/hls/v4/",
+          "extra": {
+            "xmux": {
+              "cMaxReuseTimes": 0,
+              "maxConcurrency": "8-16",
+              "maxConnections": 0,
+              "hKeepAlivePeriod": 30,
+              "hMaxRequestTimes": "600-900",
+              "hMaxReusableSecs": "1800-3000"
+            },
+            "seqKey": "page",
+            "sessionKey": "X-Trace",
+            "xPaddingKey": "etag",
+            "seqPlacement": "query",
+            "uplinkDataKey": "X-Token",
+            "xPaddingBytes": "100-400",
+            "xPaddingHeader": "X-Request-ID",
+            "xPaddingMethod": "tokenish",
+            "uplinkChunkSize": 2048,
+            "sessionPlacement": "header",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "queryInHeader",
+            "scMaxBufferedPosts": 80,
+            "scMaxEachPostBytes": "100000-300000",
+            "uplinkDataPlacement": "header",
+            "scMinPostsIntervalMs": "10-30",
+            "scStreamUpServerSecs": "20-80"
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "mamd13414-1.fastcon.cc",
+          "fingerprint": "qq",
+          "alpn": [
+            "h2"
+          ]
+        },
+        "sockopt": {
+          "tcpNoDelay": true,
+          "tcpFastOpen": true,
+          "tcpcongestion": "bbr",
+          "tcpUserTimeout": 10000,
+          "tcpKeepAliveIdle": 30,
+          "tcpKeepAliveInterval": 15
+        }
+      },
+      "mux": {
+        "enabled": false,
+        "concurrency": -1,
+        "xudpConcurrency": 16,
+        "xudpProxyUDP443": "reject"
+      }
+    },
+    {
+      "tag": "proxy-2",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "178.176.128.128",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "mamd13414-2.fastcon.cc",
+          "path": "/clips/hls/v4/",
+          "extra": {
+            "xmux": {
+              "cMaxReuseTimes": 0,
+              "maxConcurrency": "8-16",
+              "maxConnections": 0,
+              "hKeepAlivePeriod": 30,
+              "hMaxRequestTimes": "600-900",
+              "hMaxReusableSecs": "1800-3000"
+            },
+            "seqKey": "page",
+            "sessionKey": "X-Trace",
+            "xPaddingKey": "etag",
+            "seqPlacement": "query",
+            "uplinkDataKey": "X-Token",
+            "xPaddingBytes": "100-400",
+            "xPaddingHeader": "X-Request-ID",
+            "xPaddingMethod": "tokenish",
+            "uplinkChunkSize": 2048,
+            "sessionPlacement": "header",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "queryInHeader",
+            "scMaxBufferedPosts": 80,
+            "scMaxEachPostBytes": "100000-300000",
+            "uplinkDataPlacement": "header",
+            "scMinPostsIntervalMs": "10-30",
+            "scStreamUpServerSecs": "20-80"
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "mamd13414-2.fastcon.cc",
+          "fingerprint": "qq",
+          "alpn": [
+            "h2"
+          ]
+        },
+        "sockopt": {
+          "tcpNoDelay": true,
+          "tcpFastOpen": true,
+          "tcpcongestion": "bbr",
+          "tcpUserTimeout": 10000,
+          "tcpKeepAliveIdle": 30,
+          "tcpKeepAliveInterval": 15
+        }
+      },
+      "mux": {
+        "enabled": false,
+        "concurrency": -1,
+        "xudpConcurrency": 16,
+        "xudpProxyUDP443": "reject"
+      }
+    },
+    {
+      "tag": "proxy-3",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "178.176.128.128",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "mamd13414-3.fastcon.cc",
+          "path": "/clips/hls/v4/",
+          "extra": {
+            "xmux": {
+              "cMaxReuseTimes": 0,
+              "maxConcurrency": "8-16",
+              "maxConnections": 0,
+              "hKeepAlivePeriod": 30,
+              "hMaxRequestTimes": "600-900",
+              "hMaxReusableSecs": "1800-3000"
+            },
+            "seqKey": "page",
+            "sessionKey": "X-Trace",
+            "xPaddingKey": "etag",
+            "seqPlacement": "query",
+            "uplinkDataKey": "X-Token",
+            "xPaddingBytes": "100-400",
+            "xPaddingHeader": "X-Request-ID",
+            "xPaddingMethod": "tokenish",
+            "uplinkChunkSize": 2048,
+            "sessionPlacement": "header",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "queryInHeader",
+            "scMaxBufferedPosts": 80,
+            "scMaxEachPostBytes": "100000-300000",
+            "uplinkDataPlacement": "header",
+            "scMinPostsIntervalMs": "10-30",
+            "scStreamUpServerSecs": "20-80"
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "mamd13414-3.fastcon.cc",
+          "fingerprint": "qq",
+          "alpn": [
+            "h2"
+          ]
+        },
+        "sockopt": {
+          "tcpNoDelay": true,
+          "tcpFastOpen": true,
+          "tcpcongestion": "bbr",
+          "tcpUserTimeout": 10000,
+          "tcpKeepAliveIdle": 30,
+          "tcpKeepAliveInterval": 15
+        }
+      },
+      "mux": {
+        "enabled": false,
+        "concurrency": -1,
+        "xudpConcurrency": 16,
+        "xudpProxyUDP443": "reject"
+      }
+    },
+    {
+      "tag": "proxy-4",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "178.176.128.128",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "mamd13414-4.fastcon.cc",
+          "path": "/clips/hls/v4/",
+          "extra": {
+            "xmux": {
+              "cMaxReuseTimes": 0,
+              "maxConcurrency": "8-16",
+              "maxConnections": 0,
+              "hKeepAlivePeriod": 30,
+              "hMaxRequestTimes": "600-900",
+              "hMaxReusableSecs": "1800-3000"
+            },
+            "seqKey": "page",
+            "sessionKey": "X-Trace",
+            "xPaddingKey": "etag",
+            "seqPlacement": "query",
+            "uplinkDataKey": "X-Token",
+            "xPaddingBytes": "100-400",
+            "xPaddingHeader": "X-Request-ID",
+            "xPaddingMethod": "tokenish",
+            "uplinkChunkSize": 2048,
+            "sessionPlacement": "header",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "queryInHeader",
+            "scMaxBufferedPosts": 80,
+            "scMaxEachPostBytes": "100000-300000",
+            "uplinkDataPlacement": "header",
+            "scMinPostsIntervalMs": "10-30",
+            "scStreamUpServerSecs": "20-80"
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "mamd13414-4.fastcon.cc",
+          "fingerprint": "qq",
+          "alpn": [
+            "h2"
+          ]
+        },
+        "sockopt": {
+          "tcpNoDelay": true,
+          "tcpFastOpen": true,
+          "tcpcongestion": "bbr",
+          "tcpUserTimeout": 10000,
+          "tcpKeepAliveIdle": 30,
+          "tcpKeepAliveInterval": 15
+        }
+      },
+      "mux": {
+        "enabled": false,
+        "concurrency": -1,
+        "xudpConcurrency": 16,
+        "xudpProxyUDP443": "reject"
+      }
+    },
+    {
+      "tag": "proxy-5",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "178.176.128.128",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "packet-up",
+          "host": "mamd13414-5.fastcon.cc",
+          "path": "/clips/hls/v4/",
+          "extra": {
+            "xmux": {
+              "cMaxReuseTimes": 0,
+              "maxConcurrency": "8-16",
+              "maxConnections": 0,
+              "hKeepAlivePeriod": 30,
+              "hMaxRequestTimes": "600-900",
+              "hMaxReusableSecs": "1800-3000"
+            },
+            "seqKey": "page",
+            "sessionKey": "X-Trace",
+            "xPaddingKey": "etag",
+            "seqPlacement": "query",
+            "uplinkDataKey": "X-Token",
+            "xPaddingBytes": "100-400",
+            "xPaddingHeader": "X-Request-ID",
+            "xPaddingMethod": "tokenish",
+            "uplinkChunkSize": 2048,
+            "sessionPlacement": "header",
+            "uplinkHTTPMethod": "GET",
+            "xPaddingObfsMode": true,
+            "xPaddingPlacement": "queryInHeader",
+            "scMaxBufferedPosts": 80,
+            "scMaxEachPostBytes": "100000-300000",
+            "uplinkDataPlacement": "header",
+            "scMinPostsIntervalMs": "10-30",
+            "scStreamUpServerSecs": "20-80"
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "mamd13414-5.fastcon.cc",
+          "fingerprint": "qq",
+          "alpn": [
+            "h2"
+          ]
+        },
+        "sockopt": {
+          "tcpNoDelay": true,
+          "tcpFastOpen": true,
+          "tcpcongestion": "bbr",
+          "tcpUserTimeout": 10000,
+          "tcpKeepAliveIdle": 30,
+          "tcpKeepAliveInterval": 15
+        }
+      },
+      "mux": {
+        "enabled": false,
+        "concurrency": -1,
+        "xudpConcurrency": 16,
+        "xudpProxyUDP443": "reject"
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "burstObservatory": {
+    "pingConfig": {
+      "timeout": "5s",
+      "interval": "60s",
+      "sampling": 2,
+      "httpMethod": "HEAD",
+      "destination": "https://yandex.ru/internet",
+      "connectivity": ""
+    },
+    "subjectSelector": [
+      "proxy"
+    ]
+  },
+  "remarks": "🇷🇺 LTE | Все операторы-5",
+  "meta": {
+    "serverDescription": "Lite"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "keyword:vk",
+          "keyword:userapi",
+          "keyword:mycdn.me",
+          "keyword:mail.ru",
+          "keyword:imgsmail",
+          "keyword:ok.ru",
+          "keyword:okcdn.ru",
+          "keyword:yandex",
+          "keyword:ya.ru",
+          "keyword:yastatic",
+          "keyword:kinopoisk",
+          "keyword:kpcdn",
+          "keyword:dzen",
+          "keyword:auto.ru",
+          "keyword:rutube",
+          "keyword:ivi",
+          "keyword:kion",
+          "keyword:okko",
+          "keyword:wink",
+          "keyword:avito",
+          "keyword:ozon",
+          "keyword:wildberries",
+          "keyword:wb.ru",
+          "keyword:megamarket",
+          "keyword:lemanapro",
+          "keyword:magnit",
+          "keyword:5ka",
+          "keyword:perekrestok",
+          "keyword:detmir",
+          "keyword:samokat",
+          "keyword:kuper",
+          "keyword:auchan",
+          "keyword:2gis",
+          "keyword:gismeteo",
+          "keyword:gosuslugi",
+          "keyword:gov.ru",
+          "keyword:gu-st.ru",
+          "keyword:nalog",
+          "keyword:mos.ru",
+          "keyword:goskey",
+          "keyword:rustore",
+          "keyword:sberdevices",
+          "keyword:giga.chat",
+          "keyword:alfa",
+          "keyword:vtb",
+          "keyword:psbank",
+          "keyword:cbr",
+          "keyword:nspk",
+          "keyword:mts",
+          "keyword:megafon",
+          "keyword:beeline",
+          "keyword:tele2",
+          "keyword:t2.ru",
+          "keyword:rzd",
+          "keyword:aeroflot",
+          "keyword:pobeda",
+          "keyword:tutu",
+          "keyword:cdek",
+          "keyword:pochta",
+          "keyword:kaspersky",
+          "keyword:rt.ru",
+          "keyword:hh",
+          "keyword:rambler",
+          "keyword:rbc",
+          "keyword:zvuk.com",
+          "keyword:lenta"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "cdn-ru.fastcon.cc",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/cdn/ws/v1/",
+          "headers": {
+            "Host": "cdn-ru.fastcon.cc"
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "cdn-ru.fastcon.cc",
+          "fingerprint": "random",
+          "alpn": [
+            "http/1.1"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇷🇺 LTE | Все операторы"
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "keyword:vk",
+          "keyword:userapi",
+          "keyword:mycdn.me",
+          "keyword:mail.ru",
+          "keyword:imgsmail",
+          "keyword:ok.ru",
+          "keyword:okcdn.ru",
+          "keyword:yandex",
+          "keyword:ya.ru",
+          "keyword:yastatic",
+          "keyword:kinopoisk",
+          "keyword:kpcdn",
+          "keyword:dzen",
+          "keyword:auto.ru",
+          "keyword:rutube",
+          "keyword:ivi",
+          "keyword:kion",
+          "keyword:okko",
+          "keyword:wink",
+          "keyword:avito",
+          "keyword:ozon",
+          "keyword:wildberries",
+          "keyword:wb.ru",
+          "keyword:megamarket",
+          "keyword:lemanapro",
+          "keyword:magnit",
+          "keyword:5ka",
+          "keyword:perekrestok",
+          "keyword:detmir",
+          "keyword:samokat",
+          "keyword:kuper",
+          "keyword:auchan",
+          "keyword:2gis",
+          "keyword:gismeteo",
+          "keyword:gosuslugi",
+          "keyword:gov.ru",
+          "keyword:gu-st.ru",
+          "keyword:nalog",
+          "keyword:mos.ru",
+          "keyword:goskey",
+          "keyword:rustore",
+          "keyword:sberdevices",
+          "keyword:giga.chat",
+          "keyword:alfa",
+          "keyword:vtb",
+          "keyword:psbank",
+          "keyword:cbr",
+          "keyword:nspk",
+          "keyword:mts",
+          "keyword:megafon",
+          "keyword:beeline",
+          "keyword:tele2",
+          "keyword:t2.ru",
+          "keyword:rzd",
+          "keyword:aeroflot",
+          "keyword:pobeda",
+          "keyword:tutu",
+          "keyword:cdek",
+          "keyword:pochta",
+          "keyword:kaspersky",
+          "keyword:rt.ru",
+          "keyword:hh",
+          "keyword:rambler",
+          "keyword:rbc",
+          "keyword:zvuk.com",
+          "keyword:lenta"
+        ],
+        "outboundTag": "direct"
       }
     ],
     "domainMatcher": "hybrid",
@@ -173,6 +1211,3698 @@
   "remarks": "🇷🇺 LTE | Все операторы-6"
 },
   {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "domain:ru",
+          "domain:xn--p1ai",
+          "keyword:userapi.com",
+          "keyword:mycdn.me",
+          "keyword:vkuservideo",
+          "keyword:vkuser.net",
+          "keyword:vkvideo",
+          "keyword:vk-cdn.net",
+          "keyword:vk.com",
+          "keyword:vk.me",
+          "keyword:avito.st",
+          "keyword:yandex.com",
+          "keyword:yandex.net",
+          "keyword:yastatic.net",
+          "keyword:yandexcloud.net",
+          "keyword:ya.cc",
+          "keyword:2gis.com",
+          "keyword:mradx.net",
+          "keyword:wbstatic.net",
+          "keyword:wbbasket",
+          "keyword:okko.tv",
+          "keyword:zvuk.com",
+          "keyword:dzeninfra"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "balancerTag": "Super_Balancer"
+      }
+    ],
+    "balancers": [
+      {
+        "tag": "Super_Balancer",
+        "selector": [
+          "proxy"
+        ],
+        "strategy": {
+          "type": "roundRobin"
+        },
+        "fallbackTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "belarus-4.harknmav.fun",
+            "port": 7443,
+            "password": "n5vWxAZy2MAtygdX9wnu_tyBLu7g-LMH"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "trgrpc",
+          "authority": "trgrpc",
+          "mode": false
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "belarus-4.harknmav.fun",
+          "fingerprint": "random",
+          "alpn": [
+            "h2"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "proxy-2",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "belarus-9.harknmav.fun",
+            "port": 7443,
+            "password": "n5vWxAZy2MAtygdX9wnu_tyBLu7g-LMH"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "trgrpc",
+          "authority": "trgrpc",
+          "mode": false
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "belarus-9.harknmav.fun",
+          "fingerprint": "random",
+          "alpn": [
+            "h2"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "proxy-3",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "belarus-19.harknmav.fun",
+            "port": 7443,
+            "password": "n5vWxAZy2MAtygdX9wnu_tyBLu7g-LMH"
+            }
+        ]
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "trgrpc",
+          "authority": "trgrpc",
+          "mode": false
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "belarus-19.harknmav.fun",
+          "fingerprint": "random",
+          "alpn": [
+            "h2"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "proxy-4",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "belarus-28.harknmav.fun",
+            "port": 7443,
+            "password": "n5vWxAZy2MAtygdX9wnu_tyBLu7g-LMH"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "trgrpc",
+          "authority": "trgrpc",
+          "mode": false
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "belarus-28.harknmav.fun",
+          "fingerprint": "random",
+          "alpn": [
+            "h2"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "observatory": {
+    "probeURL": "https://www.gstatic.com/generate_204",
+    "probeInterval": "60s",
+    "subjectSelector": [
+      "proxy"
+    ],
+    "enableConcurrency": true
+  },
+  "remarks": "🇧🇾 VPN | Беларусь | µTorrent",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "domain:ru",
+          "domain:xn--p1ai",
+          "keyword:userapi.com",
+          "keyword:mycdn.me",
+          "keyword:vkuservideo",
+          "keyword:vkuser.net",
+          "keyword:vkvideo",
+          "keyword:vk-cdn.net",
+          "keyword:vk.com",
+          "keyword:vk.me",
+          "keyword:avito.st",
+          "keyword:yandex.com",
+          "keyword:yandex.net",
+          "keyword:yastatic.net",
+          "keyword:yandexcloud.net",
+          "keyword:ya.cc",
+          "keyword:2gis.com",
+          "keyword:mradx.net",
+          "keyword:wbstatic.net",
+          "keyword:wbbasket",
+          "keyword:okko.tv",
+          "keyword:zvuk.com",
+          "keyword:dzeninfra"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "nlw-1.harknmav.fun",
+            "port": 7443,
+            "password": "n5vWxAZy2MAtygdX9wnu_tyBLu7g-LMH"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "trgrpc",
+          "authority": "",
+          "mode": false
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "nlw-1.harknmav.fun",
+          "fingerprint": "random",
+          "alpn": [
+            "h2"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇳🇱 VPN | Нидерланды",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "domain:ru",
+          "domain:xn--p1ai",
+          "keyword:userapi.com",
+          "keyword:mycdn.me",
+          "keyword:vkuservideo",
+          "keyword:vkuser.net",
+          "keyword:vkvideo",
+          "keyword:vk-cdn.net",
+          "keyword:vk.com",
+          "keyword:vk.me",
+          "keyword:avito.st",
+          "keyword:yandex.com",
+          "keyword:yandex.net",
+          "keyword:yastatic.net",
+          "keyword:yandexcloud.net",
+          "keyword:ya.cc",
+          "keyword:2gis.com",
+          "keyword:mradx.net",
+          "keyword:wbstatic.net",
+          "keyword:wbbasket",
+          "keyword:okko.tv",
+          "keyword:zvuk.com",
+          "keyword:dzeninfra"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "cloud-most-1.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "eh.vk.com",
+          "publicKey": "zWeCf20jRIFNaeSWo_028sR92X_Of9UEJGMZWRLhiHc",
+          "shortId": "be3c4c10ca44241a",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇵🇱 VPN | Польша | µTorrent",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "domain:ru",
+          "domain:xn--p1ai",
+          "keyword:userapi.com",
+          "keyword:mycdn.me",
+          "keyword:vkuservideo",
+          "keyword:vkuser.net",
+          "keyword:vkvideo",
+          "keyword:vk-cdn.net",
+          "keyword:vk.com",
+          "keyword:vk.me",
+          "keyword:avito.st",
+          "keyword:yandex.com",
+          "keyword:yandex.net",
+          "keyword:yastatic.net",
+          "keyword:yandexcloud.net",
+          "keyword:ya.cc",
+          "keyword:2gis.com",
+          "keyword:mradx.net",
+          "keyword:wbstatic.net",
+          "keyword:wbbasket",
+          "keyword:okko.tv",
+          "keyword:zvuk.com",
+          "keyword:dzeninfra"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "nlw-1.harknmav.fun",
+            "port": 7443,
+            "password": "n5vWxAZy2MAtygdX9wnu_tyBLu7g-LMH"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "trgrpc",
+          "authority": "",
+          "mode": false
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "nlw-1.harknmav.fun",
+          "fingerprint": "random",
+          "alpn": [
+            "h2"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇳🇱 VPN | Нидерланды",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "domain:ru",
+          "domain:xn--p1ai",
+          "keyword:userapi.com",
+          "keyword:mycdn.me",
+          "keyword:vkuservideo",
+          "keyword:vkuser.net",
+          "keyword:vkvideo",
+          "keyword:vk-cdn.net",
+          "keyword:vk.com",
+          "keyword:vk.me",
+          "keyword:avito.st",
+          "keyword:yandex.com",
+          "keyword:yandex.net",
+          "keyword:yastatic.net",
+          "keyword:yandexcloud.net",
+          "keyword:ya.cc",
+          "keyword:2gis.com",
+          "keyword:mradx.net",
+          "keyword:wbstatic.net",
+          "keyword:wbbasket",
+          "keyword:okko.tv",
+          "keyword:zvuk.com",
+          "keyword:dzeninfra"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "frw-3.harknmav.fun",
+            "port": 7443,
+            "password": "n5vWxAZy2MAtygdX9wnu_tyBLu7g-LMH"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "trgrpc",
+          "authority": "trgrpc",
+          "mode": false
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "frw-3.harknmav.fun",
+          "fingerprint": "random",
+          "alpn": [
+            "h2"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇫🇷 VPN | Франция",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "domain:ru",
+          "domain:xn--p1ai",
+          "keyword:userapi.com",
+          "keyword:mycdn.me",
+          "keyword:vkuservideo",
+          "keyword:vkuser.net",
+          "keyword:vkvideo",
+          "keyword:vk-cdn.net",
+          "keyword:vk.com",
+          "keyword:vk.me",
+          "keyword:avito.st",
+          "keyword:yandex.com",
+          "keyword:yandex.net",
+          "keyword:yastatic.net",
+          "keyword:yandexcloud.net",
+          "keyword:ya.cc",
+          "keyword:2gis.com",
+          "keyword:mradx.net",
+          "keyword:wbstatic.net",
+          "keyword:wbbasket",
+          "keyword:okko.tv",
+          "keyword:zvuk.com",
+          "keyword:dzeninfra"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "grw-9.harknmav.fun",
+            "port": 7443,
+            "password": "n5vWxAZy2MAtygdX9wnu_tyBLu7g-LMH"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "trgrpc",
+          "authority": "trgrpc",
+          "mode": false
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "grw-9.harknmav.fun",
+          "fingerprint": "random",
+          "alpn": [
+            "h2"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇩🇪 VPN | Германия",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "domain:ru",
+          "domain:xn--p1ai",
+          "keyword:userapi.com",
+          "keyword:mycdn.me",
+          "keyword:vkuservideo",
+          "keyword:vkuser.net",
+          "keyword:vkvideo",
+          "keyword:vk-cdn.net",
+          "keyword:vk.com",
+          "keyword:vk.me",
+          "keyword:avito.st",
+          "keyword:yandex.com",
+          "keyword:yandex.net",
+          "keyword:yastatic.net",
+          "keyword:yandexcloud.net",
+          "keyword:ya.cc",
+          "keyword:2gis.com",
+          "keyword:mradx.net",
+          "keyword:wbstatic.net",
+          "keyword:wbbasket",
+          "keyword:okko.tv",
+          "keyword:zvuk.com",
+          "keyword:dzeninfra"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "ukw-2.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "eh.vk.com",
+          "publicKey": "cgXsLCAKHpA2hdGPl75HOquSlaxK9HJCn1p623U1Sz4",
+          "shortId": "54fa5b651f84e695",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇬🇧 VPN | Британия | µTorrent",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "keyword:vk",
+          "keyword:userapi",
+          "keyword:mycdn.me",
+          "keyword:mail.ru",
+          "keyword:imgsmail",
+          "keyword:ok.ru",
+          "keyword:okcdn.ru",
+          "keyword:yandex",
+          "keyword:ya.ru",
+          "keyword:yastatic",
+          "keyword:kinopoisk",
+          "keyword:kpcdn",
+          "keyword:dzen",
+          "keyword:auto.ru",
+          "keyword:rutube",
+          "keyword:ivi",
+          "keyword:kion",
+          "keyword:okko",
+          "keyword:wink",
+          "keyword:avito",
+          "keyword:ozon",
+          "keyword:wildberries",
+          "keyword:wb.ru",
+          "keyword:megamarket",
+          "keyword:lemanapro",
+          "keyword:magnit",
+          "keyword:5ka",
+          "keyword:perekrestok",
+          "keyword:detmir",
+          "keyword:samokat",
+          "keyword:kuper",
+          "keyword:auchan",
+          "keyword:2gis",
+          "keyword:gismeteo",
+          "keyword:gosuslugi",
+          "keyword:gov.ru",
+          "keyword:gu-st.ru",
+          "keyword:nalog",
+          "keyword:mos.ru",
+          "keyword:goskey",
+          "keyword:rustore",
+          "keyword:sberdevices",
+          "keyword:giga.chat",
+          "keyword:alfa",
+          "keyword:vtb",
+          "keyword:psbank",
+          "keyword:cbr",
+          "keyword:nspk",
+          "keyword:mts",
+          "keyword:megafon",
+          "keyword:beeline",
+          "keyword:tele2",
+          "keyword:t2.ru",
+          "keyword:rzd",
+          "keyword:aeroflot",
+          "keyword:pobeda",
+          "keyword:tutu",
+          "keyword:cdek",
+          "keyword:pochta",
+          "keyword:kaspersky",
+          "keyword:rt.ru",
+          "keyword:hh",
+          "keyword:rambler",
+          "keyword:rbc",
+          "keyword:zvuk.com",
+          "keyword:lenta"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "cdnngix-grw.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "path": "/cdn/ws/v1/",
+          "headers": {
+            "Host": "cdnngix-grw.harknmav.fun"
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "cdnngix-grw.harknmav.fun",
+          "fingerprint": "qq",
+          "alpn": [
+            "http/1.1"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇩🇪 LTE | Германия"
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "keyword:vk",
+          "keyword:userapi",
+          "keyword:mycdn.me",
+          "keyword:mail.ru",
+          "keyword:imgsmail",
+          "keyword:ok.ru",
+          "keyword:okcdn.ru",
+          "keyword:yandex",
+          "keyword:ya.ru",
+          "keyword:yastatic",
+          "keyword:kinopoisk",
+          "keyword:kpcdn",
+          "keyword:dzen",
+          "keyword:auto.ru",
+          "keyword:rutube",
+          "keyword:ivi",
+          "keyword:kion",
+          "keyword:okko",
+          "keyword:wink",
+          "keyword:avito",
+          "keyword:ozon",
+          "keyword:wildberries",
+          "keyword:wb.ru",
+          "keyword:megamarket",
+          "keyword:lemanapro",
+          "keyword:magnit",
+          "keyword:5ka",
+          "keyword:perekrestok",
+          "keyword:detmir",
+          "keyword:samokat",
+          "keyword:kuper",
+          "keyword:auchan",
+          "keyword:2gis",
+          "keyword:gismeteo",
+          "keyword:gosuslugi",
+          "keyword:gov.ru",
+          "keyword:gu-st.ru",
+          "keyword:nalog",
+          "keyword:mos.ru",
+          "keyword:goskey",
+          "keyword:rustore",
+          "keyword:sberdevices",
+          "keyword:giga.chat",
+          "keyword:alfa",
+          "keyword:vtb",
+          "keyword:psbank",
+          "keyword:cbr",
+          "keyword:nspk",
+          "keyword:mts",
+          "keyword:megafon",
+          "keyword:beeline",
+          "keyword:tele2",
+          "keyword:t2.ru",
+          "keyword:rzd",
+          "keyword:aeroflot",
+          "keyword:pobeda",
+          "keyword:tutu",
+          "keyword:cdek",
+          "keyword:pochta",
+          "keyword:kaspersky",
+          "keyword:rt.ru",
+          "keyword:hh",
+          "keyword:rambler",
+          "keyword:rbc",
+          "keyword:zvuk.com",
+          "keyword:lenta"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "mts-1.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "max.ru",
+          "publicKey": "ZLaCpPpshvZDbNPuaP-xGV4Uh9Eo7tDzonyFtFqis3w",
+          "shortId": "afdd2a7f996dd0e9",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": " 🇷🇺 LTE | Все операторы-2",
+  "meta": {
+    "serverDescription": "Lite"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "domain:ru",
+          "domain:xn--p1ai",
+          "keyword:userapi.com",
+          "keyword:mycdn.me",
+          "keyword:vkuservideo",
+          "keyword:vkuser.net",
+          "keyword:vkvideo",
+          "keyword:vk-cdn.net",
+          "keyword:vk.com",
+          "keyword:vk.me",
+          "keyword:avito.st",
+          "keyword:yandex.com",
+          "keyword:yandex.net",
+          "keyword:yastatic.net",
+          "keyword:yandexcloud.net",
+          "keyword:ya.cc",
+          "keyword:2gis.com",
+          "keyword:mradx.net",
+          "keyword:wbstatic.net",
+          "keyword:wbbasket",
+          "keyword:okko.tv",
+          "keyword:zvuk.com",
+          "keyword:dzeninfra"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "usw-1.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "eh.vk.com",
+          "publicKey": "tTh7I2h-Jt7ujutUMZ1JmPdehnOCVc5IaMvfziKOgSY",
+          "shortId": "37fa5b651f84e695",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇺🇸 VPN | США | µTorrent",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "domain:ru",
+          "domain:xn--p1ai",
+          "keyword:userapi.com",
+          "keyword:mycdn.me",
+          "keyword:vkuservideo",
+          "keyword:vkuser.net",
+          "keyword:vkvideo",
+          "keyword:vk-cdn.net",
+          "keyword:vk.com",
+          "keyword:vk.me",
+          "keyword:avito.st",
+          "keyword:yandex.com",
+          "keyword:yandex.net",
+          "keyword:yastatic.net",
+          "keyword:yandexcloud.net",
+          "keyword:ya.cc",
+          "keyword:2gis.com",
+          "keyword:mradx.net",
+          "keyword:wbstatic.net",
+          "keyword:wbbasket",
+          "keyword:okko.tv",
+          "keyword:zvuk.com",
+          "keyword:dzeninfra"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "kzw-4.harknmav.fun",
+            "port": 7443,
+            "password": "n5vWxAZy2MAtygdX9wnu_tyBLu7g-LMH"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "trgrpc",
+          "authority": "trgrpc",
+          "mode": false
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "kzw-4.harknmav.fun",
+          "fingerprint": "random",
+          "alpn": [
+            "h2"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇰🇿 VPN | Казахстан | µTorrent",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "domain:ru",
+          "domain:xn--p1ai",
+          "keyword:userapi.com",
+          "keyword:mycdn.me",
+          "keyword:vkuservideo",
+          "keyword:vkuser.net",
+          "keyword:vkvideo",
+          "keyword:vk-cdn.net",
+          "keyword:vk.com",
+          "keyword:vk.me",
+          "keyword:avito.st",
+          "keyword:yandex.com",
+          "keyword:yandex.net",
+          "keyword:yastatic.net",
+          "keyword:yandexcloud.net",
+          "keyword:ya.cc",
+          "keyword:2gis.com",
+          "keyword:mradx.net",
+          "keyword:wbstatic.net",
+          "keyword:wbbasket",
+          "keyword:okko.tv",
+          "keyword:zvuk.com",
+          "keyword:dzeninfra"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "cloud-most-5.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "max.ru",
+          "publicKey": "I5rwpqj9MfRaQWbykVFVKbv6ZMMtStaXS2dSf-xdzk4",
+          "shortId": "df1c2c12ca44261a",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇦🇹 VPN | Австрия | µTorrent",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "trojan",
+      "settings": {
+        "servers": [
+          {
+            "address": "fdc.harknmav.fun",
+            "port": 7443,
+            "password": "n5vWxAZy2MAtygdX9wnu_tyBLu7g-LMH"
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "grpc",
+        "grpcSettings": {
+          "serviceName": "trgrpc",
+          "authority": "",
+          "mode": false
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "fdc.harknmav.fun",
+          "fingerprint": "random",
+          "alpn": [
+            "h2"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇷🇺 VPN | Россия | No Ads | µTorrent",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "domain:ru",
+          "domain:xn--p1ai",
+          "keyword:userapi.com",
+          "keyword:mycdn.me",
+          "keyword:vkuservideo",
+          "keyword:vkuser.net",
+          "keyword:vkvideo",
+          "keyword:vk-cdn.net",
+          "keyword:vk.com",
+          "keyword:vk.me",
+          "keyword:avito.st",
+          "keyword:yandex.com",
+          "keyword:yandex.net",
+          "keyword:yastatic.net",
+          "keyword:yandexcloud.net",
+          "keyword:ya.cc",
+          "keyword:2gis.com",
+          "keyword:mradx.net",
+          "keyword:wbstatic.net",
+          "keyword:wbbasket",
+          "keyword:okko.tv",
+          "keyword:zvuk.com",
+          "keyword:dzeninfra"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "zaw-1.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "zaw-1.harknmav.fun",
+          "fingerprint": "qq",
+          "alpn": [
+            "h2"
+          ]
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇿🇦 VPN | ЮАР",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "keyword:vk",
+          "keyword:userapi",
+          "keyword:mycdn.me",
+          "keyword:mail.ru",
+          "keyword:imgsmail",
+          "keyword:ok.ru",
+          "keyword:okcdn.ru",
+          "keyword:yandex",
+          "keyword:ya.ru",
+          "keyword:yastatic",
+          "keyword:kinopoisk",
+          "keyword:kpcdn",
+          "keyword:dzen",
+          "keyword:auto.ru",
+          "keyword:rutube",
+          "keyword:ivi",
+          "keyword:kion",
+          "keyword:okko",
+          "keyword:wink",
+          "keyword:avito",
+          "keyword:ozon",
+          "keyword:wildberries",
+          "keyword:wb.ru",
+          "keyword:megamarket",
+          "keyword:lemanapro",
+          "keyword:magnit",
+          "keyword:5ka",
+          "keyword:perekrestok",
+          "keyword:detmir",
+          "keyword:samokat",
+          "keyword:kuper",
+          "keyword:auchan",
+          "keyword:2gis",
+          "keyword:gismeteo",
+          "keyword:gosuslugi",
+          "keyword:gov.ru",
+          "keyword:gu-st.ru",
+          "keyword:nalog",
+          "keyword:mos.ru",
+          "keyword:goskey",
+          "keyword:rustore",
+          "keyword:sberdevices",
+          "keyword:giga.chat",
+          "keyword:alfa",
+          "keyword:vtb",
+          "keyword:psbank",
+          "keyword:cbr",
+          "keyword:nspk",
+          "keyword:mts",
+          "keyword:megafon",
+          "keyword:beeline",
+          "keyword:tele2",
+          "keyword:t2.ru",
+          "keyword:rzd",
+          "keyword:aeroflot",
+          "keyword:pobeda",
+          "keyword:tutu",
+          "keyword:cdek",
+          "keyword:pochta",
+          "keyword:kaspersky",
+          "keyword:rt.ru",
+          "keyword:hh",
+          "keyword:rambler",
+          "keyword:rbc",
+          "keyword:zvuk.com",
+          "keyword:lenta"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "city-most-6.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "max.ru",
+          "publicKey": "29Nj1TexJekHKphyU1kpPxV_VKMz2pgAZ96V1VKmYn0",
+          "shortId": "bd1c2c12ca44261a",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇫🇷 LTE | Франция"
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "keyword:vk",
+          "keyword:userapi",
+          "keyword:mycdn.me",
+          "keyword:mail.ru",
+          "keyword:imgsmail",
+          "keyword:ok.ru",
+          "keyword:okcdn.ru",
+          "keyword:yandex",
+          "keyword:ya.ru",
+          "keyword:yastatic",
+          "keyword:kinopoisk",
+          "keyword:kpcdn",
+          "keyword:dzen",
+          "keyword:auto.ru",
+          "keyword:rutube",
+          "keyword:ivi",
+          "keyword:kion",
+          "keyword:okko",
+          "keyword:wink",
+          "keyword:avito",
+          "keyword:ozon",
+          "keyword:wildberries",
+          "keyword:wb.ru",
+          "keyword:megamarket",
+          "keyword:lemanapro",
+          "keyword:magnit",
+          "keyword:5ka",
+          "keyword:perekrestok",
+          "keyword:detmir",
+          "keyword:samokat",
+          "keyword:kuper",
+          "keyword:auchan",
+          "keyword:2gis",
+          "keyword:gismeteo",
+          "keyword:gosuslugi",
+          "keyword:gov.ru",
+          "keyword:gu-st.ru",
+          "keyword:nalog",
+          "keyword:mos.ru",
+          "keyword:goskey",
+          "keyword:rustore",
+          "keyword:sberdevices",
+          "keyword:giga.chat",
+          "keyword:alfa",
+          "keyword:vtb",
+          "keyword:psbank",
+          "keyword:cbr",
+          "keyword:nspk",
+          "keyword:mts",
+          "keyword:megafon",
+          "keyword:beeline",
+          "keyword:tele2",
+          "keyword:t2.ru",
+          "keyword:rzd",
+          "keyword:aeroflot",
+          "keyword:pobeda",
+          "keyword:tutu",
+          "keyword:cdek",
+          "keyword:pochta",
+          "keyword:kaspersky",
+          "keyword:rt.ru",
+          "keyword:hh",
+          "keyword:rambler",
+          "keyword:rbc",
+          "keyword:zvuk.com",
+          "keyword:lenta"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "city-most-3.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "max.ru",
+          "publicKey": "Yc8UKKVXZed7fz1yxWOzBamSns-_t3thFdHr8DIzkyc",
+          "shortId": "4e352b0d4d15e0f9",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": " 🇦🇪  LTE | Дубай | µTorrent"
+},
+  {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "keyword:vk",
+          "keyword:userapi",
+          "keyword:mycdn.me",
+          "keyword:mail.ru",
+          "keyword:imgsmail",
+          "keyword:ok.ru",
+          "keyword:okcdn.ru",
+          "keyword:yandex",
+          "keyword:ya.ru",
+          "keyword:yastatic",
+          "keyword:kinopoisk",
+          "keyword:kpcdn",
+          "keyword:dzen",
+          "keyword:auto.ru",
+          "keyword:rutube",
+          "keyword:ivi",
+          "keyword:kion",
+          "keyword:okko",
+          "keyword:wink",
+          "keyword:avito",
+          "keyword:ozon",
+          "keyword:wildberries",
+          "keyword:wb.ru",
+          "keyword:megamarket",
+          "keyword:lemanapro",
+          "keyword:magnit",
+          "keyword:5ka",
+          "keyword:perekrestok",
+          "keyword:detmir",
+          "keyword:samokat",
+          "keyword:kuper",
+          "keyword:auchan",
+          "keyword:2gis",
+          "keyword:gismeteo",
+          "keyword:gosuslugi",
+          "keyword:gov.ru",
+          "keyword:gu-st.ru",
+          "keyword:nalog",
+          "keyword:mos.ru",
+          "keyword:goskey",
+          "keyword:rustore",
+          "keyword:sberdevices",
+          "keyword:giga.chat",
+          "keyword:alfa",
+          "keyword:vtb",
+          "keyword:psbank",
+          "keyword:cbr",
+          "keyword:nspk",
+          "keyword:mts",
+          "keyword:megafon",
+          "keyword:beeline",
+          "keyword:tele2",
+          "keyword:t2.ru",
+          "keyword:rzd",
+          "keyword:aeroflot",
+          "keyword:pobeda",
+          "keyword:tutu",
+          "keyword:cdek",
+          "keyword:pochta",
+          "keyword:kaspersky",
+          "keyword:rt.ru",
+          "keyword:hh",
+          "keyword:rambler",
+          "keyword:rbc",
+          "keyword:zvuk.com",
+          "keyword:lenta"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "city-most-1.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "max.ru",
+          "publicKey": "zWeCf20jRIFNaeSWo_028sR92X_Of9UEJGMZWRLhiHc",
+          "shortId": "be3c4c10ca44241a",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇵🇱 LTE | Польша | µTorrent",
+  "meta": {
+    "serverDescription": "Lite"
+  }
+},
+{
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "keyword:vk",
+          "keyword:userapi",
+          "keyword:mycdn.me",
+          "keyword:mail.ru",
+          "keyword:imgsmail",
+          "keyword:ok.ru",
+          "keyword:okcdn.ru",
+          "keyword:yandex",
+          "keyword:ya.ru",
+          "keyword:yastatic",
+          "keyword:kinopoisk",
+          "keyword:kpcdn",
+          "keyword:dzen",
+          "keyword:auto.ru",
+          "keyword:rutube",
+          "keyword:ivi",
+          "keyword:kion",
+          "keyword:okko",
+          "keyword:wink",
+          "keyword:avito",
+          "keyword:ozon",
+          "keyword:wildberries",
+          "keyword:wb.ru",
+          "keyword:megamarket",
+          "keyword:lemanapro",
+          "keyword:magnit",
+          "keyword:5ka",
+          "keyword:perekrestok",
+          "keyword:detmir",
+          "keyword:samokat",
+          "keyword:kuper",
+          "keyword:auchan",
+          "keyword:2gis",
+          "keyword:gismeteo",
+          "keyword:gosuslugi",
+          "keyword:gov.ru",
+          "keyword:gu-st.ru",
+          "keyword:nalog",
+          "keyword:mos.ru",
+          "keyword:goskey",
+          "keyword:rustore",
+          "keyword:sberdevices",
+          "keyword:giga.chat",
+          "keyword:alfa",
+          "keyword:vtb",
+          "keyword:psbank",
+          "keyword:cbr",
+          "keyword:nspk",
+          "keyword:mts",
+          "keyword:megafon",
+          "keyword:beeline",
+          "keyword:tele2",
+          "keyword:t2.ru",
+          "keyword:rzd",
+          "keyword:aeroflot",
+          "keyword:pobeda",
+          "keyword:tutu",
+          "keyword:cdek",
+          "keyword:pochta",
+          "keyword:kaspersky",
+          "keyword:rt.ru",
+          "keyword:hh",
+          "keyword:rambler",
+          "keyword:rbc",
+          "keyword:zvuk.com",
+          "keyword:lenta"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "city-most-2.harknmav.fun",
+            "port": 5545,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "ads.x5.ru",
+          "publicKey": "BkQP5K_b-8lshJciihVQa4SbEWu-g51DzlVGndzwc2w",
+          "shortId": "4e752b0d4d15e0f9",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇨🇾 LTE | Кипр | µTorrent",
+  "meta": {
+    "serverDescription": "Lite"
+  }
+},
+{
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "domain:ru",
+          "domain:xn--p1ai",
+          "keyword:userapi.com",
+          "keyword:mycdn.me",
+          "keyword:vkuservideo",
+          "keyword:vkuser.net",
+          "keyword:vkvideo",
+          "keyword:vk-cdn.net",
+          "keyword:vk.com",
+          "keyword:vk.me",
+          "keyword:avito.st",
+          "keyword:yandex.com",
+          "keyword:yandex.net",
+          "keyword:yastatic.net",
+          "keyword:yandexcloud.net",
+          "keyword:ya.cc",
+          "keyword:2gis.com",
+          "keyword:mradx.net",
+          "keyword:wbstatic.net",
+          "keyword:wbbasket",
+          "keyword:okko.tv",
+          "keyword:zvuk.com",
+          "keyword:dzeninfra"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "caw-1.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "eh.vk.com",
+          "publicKey": "UREQcI9I7MVmX8vkFdXjKsco_rfjVZJ-lpzfSmBdi0Q",
+          "shortId": "2e552a0d2d15e0f9",
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": " 🇨🇦 VPN | Канада | µTorrent",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+{
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "domain:ru",
+          "domain:xn--p1ai",
+          "keyword:userapi.com",
+          "keyword:mycdn.me",
+          "keyword:vkuservideo",
+          "keyword:vkuser.net",
+          "keyword:vkvideo",
+          "keyword:vk-cdn.net",
+          "keyword:vk.com",
+          "keyword:vk.me",
+          "keyword:avito.st",
+          "keyword:yandex.com",
+          "keyword:yandex.net",
+          "keyword:yastatic.net",
+          "keyword:yandexcloud.net",
+          "keyword:ya.cc",
+          "keyword:2gis.com",
+          "keyword:mradx.net",
+          "keyword:wbstatic.net",
+          "keyword:wbbasket",
+          "keyword:okko.tv",
+          "keyword:zvuk.com",
+          "keyword:dzeninfra"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "hysteria",
+      "settings": {
+        "address": "uzw-5.harknmav.fun",
+        "port": 27015,
+        "version": 2
+      },
+      "streamSettings": {
+        "network": "hysteria",
+        "hysteriaSettings": {
+          "version": 2,
+          "auth": "adfb26d5-4a23-4263-a674-c3913113bd04"
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "uzw-5.harknmav.fun",
+          "fingerprint": "qq",
+          "alpn": [
+            "h3"
+          ]
+        },
+        "finalmask": {
+          "udp": [
+            {
+              "type": "salamander",
+              "settings": {
+                "password": "ZGjDBdhQG8A-WZgogsUDHFSZQLBX8lPvqkjWDMNyFCk"
+              }
+            }
+          ],
+          "quicParams": {
+            "debug": false,
+            "bbrProfile": "standard",
+            "congestion": "bbr",
+            "maxIdleTimeout": 30,
+            "keepAlivePeriod": 0,
+            "maxIncomingStreams": 256,
+            "maxStreamReceiveWindow": 8388608,
+            "initStreamReceiveWindow": 8388608,
+            "maxConnectionReceiveWindow": 20971520,
+            "initConnectionReceiveWindow": 20971520
+          }
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇺🇿 VPN | Узбекистан | µTorrent",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+{
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "domain:ru",
+          "domain:xn--p1ai",
+          "keyword:userapi.com",
+          "keyword:mycdn.me",
+          "keyword:vkuservideo",
+          "keyword:vkuser.net",
+          "keyword:vkvideo",
+          "keyword:vk-cdn.net",
+          "keyword:vk.com",
+          "keyword:vk.me",
+          "keyword:avito.st",
+          "keyword:yandex.com",
+          "keyword:yandex.net",
+          "keyword:yastatic.net",
+          "keyword:yandexcloud.net",
+          "keyword:ya.cc",
+          "keyword:2gis.com",
+          "keyword:mradx.net",
+          "keyword:wbstatic.net",
+          "keyword:wbbasket",
+          "keyword:okko.tv",
+          "keyword:zvuk.com",
+          "keyword:dzeninfra"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "cloud-most-3.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "eh.vk.com",
+          "publicKey": "zWeCf20jRIFNaeSWo_028sR92X_Of9UEJGMZWRLhiHc",
+          "shortId": "ae5c4c10ca44241a",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇪🇪 VPN | Эстония | µTorrent",
+  "meta": {
+    "serverDescription": "VPN"
+  }
+},
+{
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "keyword:vk",
+          "keyword:userapi",
+          "keyword:mycdn.me",
+          "keyword:mail.ru",
+          "keyword:imgsmail",
+          "keyword:ok.ru",
+          "keyword:okcdn.ru",
+          "keyword:yandex",
+          "keyword:ya.ru",
+          "keyword:yastatic",
+          "keyword:kinopoisk",
+          "keyword:kpcdn",
+          "keyword:dzen",
+          "keyword:auto.ru",
+          "keyword:rutube",
+          "keyword:ivi",
+          "keyword:kion",
+          "keyword:okko",
+          "keyword:wink",
+          "keyword:avito",
+          "keyword:ozon",
+          "keyword:wildberries",
+          "keyword:wb.ru",
+          "keyword:megamarket",
+          "keyword:lemanapro",
+          "keyword:magnit",
+          "keyword:5ka",
+          "keyword:perekrestok",
+          "keyword:detmir",
+          "keyword:samokat",
+          "keyword:kuper",
+          "keyword:auchan",
+          "keyword:2gis",
+          "keyword:gismeteo",
+          "keyword:gosuslugi",
+          "keyword:gov.ru",
+          "keyword:gu-st.ru",
+          "keyword:nalog",
+          "keyword:mos.ru",
+          "keyword:goskey",
+          "keyword:rustore",
+          "keyword:sberdevices",
+          "keyword:giga.chat",
+          "keyword:alfa",
+          "keyword:vtb",
+          "keyword:psbank",
+          "keyword:cbr",
+          "keyword:nspk",
+          "keyword:mts",
+          "keyword:megafon",
+          "keyword:beeline",
+          "keyword:tele2",
+          "keyword:t2.ru",
+          "keyword:rzd",
+          "keyword:aeroflot",
+          "keyword:pobeda",
+          "keyword:tutu",
+          "keyword:cdek",
+          "keyword:pochta",
+          "keyword:kaspersky",
+          "keyword:rt.ru",
+          "keyword:hh",
+          "keyword:rambler",
+          "keyword:rbc",
+          "keyword:zvuk.com",
+          "keyword:lenta"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "network": "tcp,udp",
+        "balancerTag": "Super_Balancer"
+      }
+    ],
+    "balancers": [
+      {
+        "tag": "Super_Balancer",
+        "selector": [
+          "proxy"
+        ],
+        "strategy": {
+          "type": "roundRobin"
+        },
+        "fallbackTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "beeline-1.harknmav.fun",
+            "port": 9443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+"streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "ads.x5.ru",
+          "publicKey": "pPzR1XhpFrEIwevI7lPPvw4faRcRQmqiNySYHkSdVBU",
+          "shortId": "2a552b0d4d15e0f7",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "proxy-2",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "beeline-2.harknmav.fun",
+            "port": 9443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "ads.x5.ru",
+          "publicKey": "pPzR1XhpFrEIwevI7lPPvw4faRcRQmqiNySYHkSdVBU",
+          "shortId": "2a552b0d4d15e0f7",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "proxy-3",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "beeline-3.harknmav.fun",
+            "port": 9443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "ads.x5.ru",
+          "publicKey": "pPzR1XhpFrEIwevI7lPPvw4faRcRQmqiNySYHkSdVBU",
+          "shortId": "2a552b0d4d15e0f7",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "proxy-4",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "beeline-4.harknmav.fun",
+            "port": 9443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "ads.x5.ru",
+          "publicKey": "pPzR1XhpFrEIwevI7lPPvw4faRcRQmqiNySYHkSdVBU",
+          "shortId": "2a552b0d4d15e0f7",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "proxy-5",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "beeline-5.harknmav.fun",
+            "port": 9443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "ads.x5.ru",
+          "publicKey": "pPzR1XhpFrEIwevI7lPPvw4faRcRQmqiNySYHkSdVBU",
+          "shortId": "2a552b0d4d15e0f7",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "observatory": {
+    "probeURL": "https://www.gstatic.com/generate_204",
+    "probeInterval": "60s",
+    "subjectSelector": [
+      "proxy"
+    ],
+    "enableConcurrency": true
+  },
+  "remarks": "🇷🇺 LTE | Все операторы-3",
+  "meta": {
+    "serverDescription": "Lite"
+  }
+},
+{
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "keyword:vk",
+          "keyword:userapi",
+          "keyword:mycdn.me",
+          "keyword:mail.ru",
+          "keyword:imgsmail",
+          "keyword:ok.ru",
+          "keyword:okcdn.ru",
+          "keyword:yandex",
+          "keyword:ya.ru",
+          "keyword:yastatic",
+          "keyword:kinopoisk",
+          "keyword:kpcdn",
+          "keyword:dzen",
+          "keyword:auto.ru",
+          "keyword:rutube",
+          "keyword:ivi",
+          "keyword:kion",
+          "keyword:okko",
+          "keyword:wink",
+          "keyword:avito",
+          "keyword:ozon",
+          "keyword:wildberries",
+          "keyword:wb.ru",
+          "keyword:megamarket",
+          "keyword:lemanapro",
+          "keyword:magnit",
+          "keyword:5ka",
+          "keyword:perekrestok",
+          "keyword:detmir",
+          "keyword:samokat",
+          "keyword:kuper",
+          "keyword:auchan",
+          "keyword:2gis",
+          "keyword:gismeteo",
+          "keyword:gosuslugi",
+          "keyword:gov.ru",
+          "keyword:gu-st.ru",
+          "keyword:nalog",
+          "keyword:mos.ru",
+          "keyword:goskey",
+          "keyword:rustore",
+          "keyword:sberdevices",
+          "keyword:giga.chat",
+          "keyword:alfa",
+          "keyword:vtb",
+          "keyword:psbank",
+          "keyword:cbr",
+          "keyword:nspk",
+          "keyword:mts",
+          "keyword:megafon",
+          "keyword:beeline",
+          "keyword:tele2",
+          "keyword:t2.ru",
+          "keyword:rzd",
+          "keyword:aeroflot",
+          "keyword:pobeda",
+          "keyword:tutu",
+          "keyword:cdek",
+          "keyword:pochta",
+          "keyword:kaspersky",
+          "keyword:rt.ru",
+          "keyword:hh",
+          "keyword:rambler",
+          "keyword:rbc",
+          "keyword:zvuk.com",
+          "keyword:lenta"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "wmscdn-1.fastcon.cc",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": ""
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "xhttp",
+        "xhttpSettings": {
+          "mode": "auto",
+          "host": "wmscdn-1.fastcon.cc",
+          "path": "/storage/blob/v2/",
+          "extra": {
+            "xmux": {
+              "cMaxReuseTimes": 0,
+              "maxConcurrency": "16-32",
+              "maxConnections": 0,
+              "hKeepAlivePeriod": 30,
+"hMaxRequestTimes": "600-900",
+              "hMaxReusableSecs": "1800-3000"
+            },
+            "headers": {}
+          }
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "wmscdn-1.fastcon.cc",
+          "fingerprint": "chrome"
+        },
+        "sockopt": {
+          "tcpNoDelay": true,
+          "tcpFastOpen": true,
+          "tcpKeepAliveIdle": 15,
+          "tcpKeepAliveInterval": 10
+        }
+      },
+      "mux": {
+        "enabled": false,
+        "concurrency": -1,
+        "xudpConcurrency": 16,
+        "xudpProxyUDP443": "reject"
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇷🇺 LTE | Все операторы-4",
+  "meta": {
+    "serverDescription": "Lite"
+  }
+},
+{
   "dns": {
     "servers": [
       "1.1.1.1",
@@ -349,7 +5079,7 @@
     "serverDescription": "Lite"
   }
 },
-  {
+{
   "dns": {
     "servers": [
       "1.1.1.1",
@@ -525,6 +5255,180 @@
   "meta": {
     "serverDescription": "Lite"
   }
+},
+{
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "keyword:vk",
+          "keyword:userapi",
+          "keyword:mycdn.me",
+          "keyword:mail.ru",
+          "keyword:imgsmail",
+          "keyword:ok.ru",
+          "keyword:okcdn.ru",
+          "keyword:yandex",
+          "keyword:ya.ru",
+          "keyword:yastatic",
+          "keyword:kinopoisk",
+          "keyword:kpcdn",
+          "keyword:dzen",
+          "keyword:auto.ru",
+          "keyword:rutube",
+          "keyword:ivi",
+          "keyword:kion",
+          "keyword:okko",
+          "keyword:wink",
+          "keyword:avito",
+          "keyword:ozon",
+          "keyword:wildberries",
+          "keyword:wb.ru",
+          "keyword:megamarket",
+          "keyword:lemanapro",
+          "keyword:magnit",
+          "keyword:5ka",
+          "keyword:perekrestok",
+          "keyword:detmir",
+          "keyword:samokat",
+          "keyword:kuper",
+          "keyword:auchan",
+          "keyword:2gis",
+          "keyword:gismeteo",
+          "keyword:gosuslugi",
+          "keyword:gov.ru",
+          "keyword:gu-st.ru",
+          "keyword:nalog",
+          "keyword:mos.ru",
+          "keyword:goskey",
+          "keyword:rustore",
+          "keyword:sberdevices",
+          "keyword:giga.chat",
+          "keyword:alfa",
+          "keyword:vtb",
+          "keyword:psbank",
+          "keyword:cbr",
+          "keyword:nspk",
+          "keyword:mts",
+          "keyword:megafon",
+          "keyword:beeline",
+          "keyword:tele2",
+          "keyword:t2.ru",
+          "keyword:rzd",
+          "keyword:aeroflot",
+          "keyword:pobeda",
+          "keyword:tutu",
+          "keyword:cdek",
+          "keyword:pochta",
+          "keyword:kaspersky",
+          "keyword:rt.ru",
+          "keyword:hh",
+          "keyword:rambler",
+          "keyword:rbc",
+          "keyword:zvuk.com",
+          "keyword:lenta"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "city-most-5.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "max.ru",
+          "publicKey": "BGW71GlS7ucRWEx-tYF0n2JKvo8uBSLnKdtMMdwBNDY",
+          "shortId": "88ec10761480dce4",
+          "fingerprint": "qq"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": "🇳🇱 LTE | Нидерланды"
 }
 
 ]
