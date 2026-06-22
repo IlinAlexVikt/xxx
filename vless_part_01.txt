@@ -1,0 +1,20 @@
+#profile-title: IrTg 01 VPN ⚡
+#profile-update-interval: 1
+#subscription-userinfo: upload=1073741824000; download=1073741824000; total=10737418240000; expire=1782864000
+#support-url: https://
+#profile-web-page-url: https://
+#announce: "Привет халявщики и тунеядцы"
+
+vless://b90b424c-6053-415c-8547-16f996331d63@134.255.252.76:9999?descriptions=люби_себя05d60e&type=tcp&spx=/N5rLmYZAAhURETl&pbk=_kcz60zlz7bBTIXtK11MgHIrnVBF9sTJnU2MiLCwDF8&encryption=none&fp=chrome&sid=0731&headerType=none&security=reality&sni=varzesh3.com&__rand=c5aaa9f2#🇩🇪🚀 Германия [🏳️LTE] | 🥭🔥
+vless://ff2611ba-7c71-4aa2-af58-6194bc8b15aa@hk-1.stormdragon.cn:30000?flow=xtls-rprx-vision&fp=chrome&pbk=5KGHDHpMiq0DD9THS78a2jvIlT5H-N1sOTJ-cK3RuS4&security=reality&sid=456f&sni=www.amazon.com&type=tcp&descriptions=люби_себяf6e839#🇭🇰🚀 Гонконг [🏳️LTE] | 🥭🔥
+vless://821100fa-b819-4614-83ee-996c4cb142cb@secure.netraidly.ru:40443?type=tcp&pbk=_fG0m51dASh_sWJMJYtX4tqhaG-h-J8H-r-q2iyOwBg&security=reality&sid=3597&sni=deepl.com&fp=chrome&encryption=none&flow=xtls-rprx-vision#🇺🇸🚀 США [🏳️LTE] | 🥭🔥
+vless://7e6d3393-bb84-45c7-9eef-35de95805b7e@142.91.108.139:443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=jp.api-yandex.net&fp=firefox&pbk=IOO3P6BDqBjUA0gB4tgpvxrXL6Fit88QgpJ1y6GYyz0&sid=0f4dacf88202e05f&type=tcp&headerType=none&burmalda=deac2d6a#🇯🇵🚀 Япония 🔐 [🏳️LTE] | 🥭🔥
+vless://fee8813d-3a9c-4749-b0af-47e5e12e8b3a@152.236.3.28:8443?type=grpc&headerType=none&security=reality&encryption=none&sni=addons.mozilla.org&fp=chrome&pbk=56QUSkgaBUAruo4LoZnfo6z6Y4CGZRTx1zdNLYKKGRk&sid=530db35e324c3aa5&serviceName=api.v1.telemetry.EventStream&descriptions=люби_себя02db08#🇺🇸🚀 США [🏳️LTE] | 🥭🔥
+vless://d0ff06ab-3def-4e8e-a8c7-99cecd468541@47.79.23.148:42552?security=reality&headerType=none&sni=one-piece.com&flow=xtls-rprx-vision&pbk=vFsbqnTb9T2RGwoZrLYbqXqjTTC4QRj9bNgnKjTVelA&fp=firefox&sid=6ba85179e30d4fc2&type=tcp&encryption=none&__rand=8a160f5d#🇭🇰🚀 Гонконг [🏳️LTE] | 🥭🔥
+vless://8553ae90-2a81-493a-b050-8ee79c8dbe4c@pol6.odavpn.online:443?type=xhttp&sni=www.kinopoisk.ru&pbk=ice5ApDYceTGVoxODC51F4RVW0HBoykvMpgL4_qLABw&path=/tDjkeuxyQPUDqF8wT2&mode=auto&sid=aabbccdd&security=reality&fp=chrome#🇵🇱🚀 Польша 🔐 [🏳️LTE] | 🥭🔥
+vless://ba302f7c-8ded-4ea6-99be-5abfd3ab6b3e@138.16.152.178:7443?pbk=OMlQAFrCMZ3DX0xlnbEZiByLBFzpUE8XJHJsrBzLdlY&serviceName=your-custom-path&sid=2da4299da566b7&sni=maps.apple.com&fp=chrome&type=grpc&security=reality&nonce=LwghTtDI#🇺🇸🚀 США [🏳️LTE] | 🥭🔥
+vless://821100fa-b819-4614-83ee-996c4cb142cb@secure.netraidly.ru:40443?encryption=none&flow=xtls-rprx-vision&fp=chrome&pbk=_fG0m51dASh_sWJMJYtX4tqhaG-h-J8H-r-q2iyOwBg&security=reality&sid=3597&sni=deepl.com&type=tcp&_t=a8f6b309#🇺🇸🚀 США [🏳️LTE] | 🥭🔥
+vless://b90b424c-6053-415c-8547-16f996331d63@134.255.252.76:9999?descriptions=люби_себя05d60e&type=tcp&spx=/N5rLmYZAAhURETl&pbk=_kcz60zlz7bBTIXtK11MgHIrnVBF9sTJnU2MiLCwDF8&encryption=none&fp=chrome&sid=0731&headerType=none&security=reality&sni=varzesh3.com&__rand=44486b15#🇩🇪🚀 Германия [🏳️LTE] | 🥭🔥
+vless://8553ae90-2a81-493a-b050-8ee79c8dbe4c@pol6.odavpn.online:443?sid=aabbccdd&sni=www.kinopoisk.ru&security=reality&pbk=ice5ApDYceTGVoxODC51F4RVW0HBoykvMpgL4_qLABw&path=/tDjkeuxyQPUDqF8wT2&mode=auto&fp=chrome&type=xhttp&__rand=4c4a5723#🇵🇱🚀 Польша 🔐 [🏳️LTE] | 🥭🔥
+vless://59ba99be-c0ae-4058-a900-4a76549e7d1a@151.236.114.160:5555?sni=ads.x5.ru&pbk=vMcehORfc09pLYu6YdXsRgW61PnZ2TyDN6_z4INH0z4&flow=xtls-rprx-vision&security=reality&encryption=none&type=tcp&fp=firefox&sid=27e53bbcab7593d7#🇷🇺🚀 Обход БС 🔐 [🏳️LTE] | 🥭🔥
+vless://1b9e301d-cecd-4eb1-8b36-eef811c2696d@se1.vitok.cc:443?sni=yastatic.net&sid=5e841fab&headerType=none&pbk=F7NZa0wqjlz9zHlFUUW8rnh9j9GwX7e2rq3CynO3s1o&type=tcp&fp=chrome&security=reality&encryption=none&descriptions=СвободуИнтернету698#🇸🇪🚀 Швеция 🔐 [🏳️LTE] | 🥭🔥
