@@ -1,248 +1,114 @@
-[
-  {
-    "dns": {
-      "servers": [
-        "1.1.1.1",
-        "1.0.0.1"
-      ],
-      "queryStrategy": "UseIP"
-    },
-    "routing": {
-      "rules": [
-        {
-          "type": "field",
-          "domain": [
-            "keyword:oneme"
-          ],
-          "outboundTag": "block"
-        },
-        {
-          "type": "field",
-          "domain": [
-            "domain:sub.harknmav.fun",
-            "keyword:tbank",
-            "keyword:t-bank",
-            "keyword:tinkoff",
-            "keyword:t-static",
-            "keyword:vk",
-            "keyword:userapi",
-            "keyword:mycdn.me",
-            "keyword:mail.ru",
-            "keyword:imgsmail",
-            "keyword:ok.ru",
-            "keyword:okcdn.ru",
-            "keyword:ya.ru",
-            "keyword:yastatic",
-            "keyword:kpcdn",
-            "keyword:dzen",
-            "keyword:auto.ru",
-            "keyword:ivi",
-            "keyword:kion",
-            "keyword:okko",
-            "keyword:wink",
-            "keyword:avito",
-            "keyword:ozon",
-            "keyword:wildberries",
-            "keyword:wb.ru",
-            "keyword:megamarket",
-            "keyword:lemanapro",
-            "keyword:magnit",
-            "5ka",
-            "keyword:perekrestok",
-            "keyword:detmir",
-            "keyword:samokat",
-            "keyword:kuper",
-            "keyword:auchan",
-            "keyword:2gis",
-            "keyword:gismeteo",
-            "keyword:gosuslugi",
-            "keyword:gov.ru",
-            "keyword:gu-st.ru",
-            "keyword:nalog",
-            "keyword:mos.ru",
-            "keyword:goskey",
-            "keyword:rustore",
-            "keyword:sberdevices",
-            "keyword:giga.chat",
-            "keyword:alfa",
-            "keyword:vtb",
-            "keyword:psbank",
-            "keyword:cbr",
-            "keyword:nspk",
-            "keyword:mts",
-            "keyword:megafon",
-            "keyword:beeline",
-            "keyword:tele2",
-            "keyword:t2.ru",
-            "keyword:rzd",
-            "keyword:aeroflot",
-            "keyword:pobeda",
-            "keyword:tutu",
-            "keyword:cdek",
-            "keyword:pochta",
-            "keyword:kaspersky",
-            "keyword:rt.ru",
-            "keyword:hh",
-            "keyword:rambler",
-            "keyword:rbc",
-            "keyword:zvuk.com",
-            "keyword:lenta"
-          ],
-          "outboundTag": "direct"
-        },
-        {
-          "type": "field",
-          "network": "tcp,udp",
-          "balancerTag": "Main_Balancer"
-        }
-      ],
-      "domainMatcher": "hybrid",
-      "domainStrategy": "AsIs"
-    },
-    "balancers": [
-      {
-        "tag": "Main_Balancer",
-        "selector": [
-          "КОНОРУЗА", "ЧОКУСОУС", "ШУВАНУПУ", "СИБИСОЖЕ", "ЧАМУЖОНЯ", 
-          "ЗУГУНАКО", "ГАПАГУУС", "ХУБОБУКО", "КАБОКУБО", "НУТОБУНЯ", 
-          "ШУГЕТОША", "ЛУГЕРАША", "ЛАМУЛАБО", "ЖАМИРИША", "ВИДУВАКА", 
-          "СОХОКОША", "МОГЕМОЛЯ", "ДОСАНИЗА", "РУШОВИНЯ", "ПОТУБИКА", 
-          "ВУГЕТАУС", "ПУЧУТИПУ", "КИВОХАБА", "ГЕВЕШАЗА"
-        ],
-        "strategy": {
-          "type": "leastLoad",
-          "settings": {
-            "maxRTT": "1500ms",
-            "expected": 2
-          }
-        },
-        "fallbackTag": "direct"
-      }
-    ],
-    "inbounds": [
-      {
-        "tag": "socks",
-        "port": 10808,
-        "listen": "127.0.0.1",
-        "protocol": "socks",
-        "settings": {
-          "udp": true,
-          "auth": "noauth"
-        },
-        "sniffing": {
-          "enabled": true,
-          "routeOnly": true,
-          "destOverride": ["tls", "quic"]
-        }
-      },
-      {
-        "tag": "http",
-        "port": 10809,
-        "listen": "127.0.0.1",
-        "protocol": "http",
-        "settings": {
-          "allowTransparent": false
-        },
-        "sniffing": {
-          "enabled": true,
-          "routeOnly": true,
-          "destOverride": ["tls", "quic"]
-        }
-      }
-    ],
-    "outbounds": [
-      {
-        "tag": "КОНОРУЗА",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [{"address": "nahan-core.fatitelegram.workers.dev", "port": 443, "users": [{"id": "73796e63-0000-4000-8000-000000000000", "encryption": "none"}]}]
-        },
-        "streamSettings": { "network": "ws", "security": "tls", "tlsSettings": { "serverName": "nahan-core.fatitelegram.workers.dev", "fingerprint": "chrome" }, "wsSettings": { "path": "/sync", "headers": { "Host": "nahan-core.fatitelegram.workers.dev" } } }
-      },
-      {
-        "tag": "ЧОКУСОУС",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [{"address": "peekconfigg.vipserver1-39d.workers.dev", "port": 443, "users": [{"id": "b9cd0054-e289-a643-071b-e38cc7b6cf23", "encryption": "none"}]}]
-        },
-        "streamSettings": { "network": "ws", "security": "tls", "tlsSettings": { "serverName": "peekconfigg.vipserver1-39d.workers.dev", "fingerprint": "chrome" }, "wsSettings": { "path": "/sync", "headers": { "Host": "peekconfigg.vipserver1-39d.workers.dev" } } }
-      },
-      {
-        "tag": "ШУВАНУПУ",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [{"address": "sweden1.banovano.space", "port": 443, "users": [{"id": "f0e922b3-c907-461c-904f-91607e7a5b8b", "encryption": "none", "flow": "xtls-rprx-vision"}]}]
-        },
-        "streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "www.nvidia.com", "publicKey": "hi7Lg2t9ywAKWSuo0-I6zJdHA_kve_xJnLKzgbKk7VE", "shortId": "49944d1e00", "fingerprint": "chrome" } }
-      },
-      {
-        "tag": "СИБИСОЖЕ",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [{"address": "56.228.16.220", "port": 2053, "users": [{"id": "17c815b6-8f85-444b-8e31-dbc96527a92e", "encryption": "none"}]}]
-        },
-        "streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "www.intel.com", "publicKey": "fxkVuna7aS4wMJ4w3fO--p3Ltp8vJ_zOApUMFx9WPhI", "shortId": "17b0df99526856a6", "fingerprint": "chrome" } }
-      },
-      {
-        "tag": "ЧАМУЖОНЯ",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [{"address": "83.228.231.188", "port": 22000, "users": [{"id": "e6a037ff-3908-4bf9-b3e7-b1138da601f9", "encryption": "none"}]}]
-        },
-        "streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "www.yahoo.com", "publicKey": "NbZ4uhJZ6zpvRLXODNcVDk9UgcKNahpN1h74CsV04Fs", "shortId": "14", "fingerprint": "chrome" } }
-      },
-      {
-        "tag": "ЗУГУНАКО",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [{"address": "94.183.187.39", "port": 444, "users": [{"id": "1dda9d26-7c04-48a6-93b4-e30fe7a5da80", "encryption": "none"}]}]
-        },
-        "streamSettings": { "network": "grpc", "security": "reality", "realitySettings": { "serverName": "web.max.ru", "publicKey": "wgxjTlVuBIi8T-QRQ2tmmH57seIfKCdE2pBGNWXcOCo", "shortId": "8614956789abcdef", "fingerprint": "chrome" }, "grpcSettings": { "serviceName": "web.max.ru" } }
-      },
-      {
-        "tag": "ГАПАГУУС",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [{"address": "56.228.16.220", "port": 2053, "users": [{"id": "17c815b6-8f85-444b-8e31-dbc96527a92e", "encryption": "none"}]}]
-        },
-        "streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "www.intel.com", "publicKey": "fxkVuna7aS4wMJ4w3fO--p3Ltp8vJ_zOApUMFx9WPhI", "shortId": "17b0df99526856a6", "fingerprint": "chrome" } }
-      },
-      {
-        "tag": "ХУБОБУКО",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [{"address": "56.228.16.220", "port": 2053, "users": [{"id": "17c815b6-8f85-444b-8e31-dbc96527a92e", "encryption": "none"}]}]
-        },
-        "streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "www.intel.com", "publicKey": "fxkVuna7aS4wMJ4w3fO--p3Ltp8vJ_zOApUMFx9WPhI", "shortId": "17b0df99526856a6", "fingerprint": "chrome" } }
-      },
-      {
-        "tag": "КАБОКУБО",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [{"address": "56.228.16.220", "port": 2053, "users": [{"id": "17c815b6-8f85-444b-8e31-dbc96527a92e", "encryption": "none"}]}]
-        },
-        "streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "www.intel.com", "publicKey": "fxkVuna7aS4wMJ4w3fO--p3Ltp8vJ_zOApUMFx9WPhI", "shortId": "17b0df99526856a6", "fingerprint": "chrome" } }
-      },
-      {
-        "tag": "НУТОБУНЯ",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [{"address": "56.228.16.220", "port": 2053, "users": [{"id": "17c815b6-8f85-444b-8e31-dbc96527a92e", "encryption": "none"}]}]
-        },
-        "streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "www.intel.com", "publicKey": "fxkVuna7aS4wMJ4w3fO--p3Ltp8vJ_zOApUMFx9WPhI", "shortId": "17b0df99526856a6", "fingerprint": "chrome" } }
-      },
-      {
-        "tag": "ШУГЕТОША",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [{"address": "56.228.16.220", "port": 2053, "users": [{"id": "17c815b6-8f85-444b-8e31-dbc96527a92e", "encryption": "none"}]}]
-        },
-        "streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "www.intel.com", "publicKey": "fxkVuna7aS4wMJ4w3fO--p3Ltp8vJ_zOApUMFx9WPhI", "shortId": "17b0df99526856a6", "fingerprint": "chrome" } }
-      },
-      {
-        "tag": "ЛУГЕРАША",
-        "protocol": "vless",
-        "settings": {
-          "vnext": [{"address": "56.228.16.220", "port": 2053, "users": [{"id": "17c815b6-8f85-444b-8e31-dbc96527a92e", "encryption": "none"}]}]
-        },
-"streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "www.intel.com", "publicKey": "fxkVuna7aS4wMJ4w3fO--p3Ltp8vJ_zOApUMFx9WPhI", "shortId": "17b0df99526856a6", "fingerprint": "chrome" } }},{"tag": "ЛАМУЛАБО","protocol": "vless","settings": {"vnext": [{"address": "56.228.16.220", "port": 2053, "users": [{"id": "17c815b6-8f85-444b-8e31-dbc96527a92e", "encryption": "none"}]}]},"streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "www.intel.com", "publicKey": "fxkVuna7aS4wMJ4w3fO--p3Ltp8vJ_zOApUMFx9WPhI", "shortId": "17b0df99526856a6", "fingerprint": "chrome" } }},{"tag": "ЖАМИРИША","protocol": "vless","settings": {"vnext": [{"address": "95.163.211.206", "port": 443, "users": [{"id": "b2b8bd00-2e42-4875-8d7b-bcf97093a1d4", "encryption": "none", "flow": "xtls-rprx-vision"}]}]},"streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "ai.sellflow.org", "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc", "shortId": "", "fingerprint": "firefox" } }},{"tag": "ВИДУВАКА","protocol": "vless","settings": {"vnext": [{"address": "5.78.163.117", "port": 55555, "users": [{"id": "d6695105-8e40-4a45-a87e-d3cf561c9fa4", "encryption": "none"}]}]},"streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "yahoo.com", "publicKey": "XPuLE49PtDeixzwOmEHuMFSZexYDTQifZ7s99w5e4QY", "shortId": "880eeeef4927eed5", "fingerprint": "chrome" } }},{"tag": "СОХОКОША","protocol": "vless","settings": {"vnext": [{"address": "5.78.163.117", "port": 55555, "users": [{"id": "d6695105-8e40-4a45-a87e-d3cf561c9fa4", "encryption": "none"}]}]},"streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "yahoo.com", "publicKey": "XPuLE49PtDeixzwOmEHuMFSZexYDTQifZ7s99w5e4QY", "shortId": "880eeeef4927eed5", "fingerprint": "chrome" } }},{"tag": "МОГЕМОЛЯ","protocol": "vless","settings": {"vnext": [{"address": "java.cdnforge.top", "port": 8080, "users": [{"id": "12db7fe7-d705-4b6e-ab30-7a758e0bcd3f", "encryption": "none"}]}]},"streamSettings": { "network": "xhttp", "security": "reality", "realitySettings": { "serverName": "Zarebin.ir", "publicKey": "uJsZX-if1IP9EJsNfq2wnTSAFCvnFawwMW6ZdoXfvQE", "shortId": "8a2e23bd40418b7e", "fingerprint": "chrome" }, "xhttpSettings": { "mode": "auto", "path": "/", "extra": { "scMaxEachPostBytes": "1000000", "xPaddingBytes": "100-1000" } } }},{"tag": "ДОСАНИЗА","protocol": "vless","settings": {"vnext": [{"address": "95.163.211.206", "port": 443, "users": [{"id": "b2b8bd00-2e42-4875-8d7b-bcf97093a1d4", "encryption": "none", "flow": "xtls-rprx-vision"}]}]},"streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "at.sellflow.org", "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc", "shortId": "", "fingerprint": "firefox" } }},{"tag": "РУШОВИНЯ","protocol": "vless","settings": {"vnext": [{"address": "95.163.211.17", "port": 443, "users": [{"id": "b2b8bd00-2e42-4875-8d7b-bcf97093a1d4", "encryption": "none", "flow": "xtls-rprx-vision"}]}]},"streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "fi.sellflow.org", "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc", "shortId": "", "fingerprint": "firefox" } }},{"tag": "ПОТУБИКА","protocol": "vless","settings": {"vnext": [{"address": "95.163.211.22", "port": 443, "users": [{"id": "b2b8bd00-2e42-4875-8d7b-bcf97093a1d4", "encryption": "none", "flow": "xtls-rprx-vision"}]}]},"streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "fi.sellflow.org", "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc", "shortId": "", "fingerprint": "firefox" } }},{"tag": "ВУГЕТАУС","protocol": "vless","settings": {"vnext": [{"address": "83.228.231.188", "port": 22000, "users": [{"id": "e6a037ff-3908-4bf9-b3e7-b1138da601f9", "encryption": "none"}]}]},"streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "www.yahoo.com", "publicKey": "NbZ4uhJZ6zpvRLXODNcVDk9UgcKNahpN1h74CsV04Fs", "shortId": "14", "fingerprint": "chrome" } }},{"tag": "КИВОХАБА","protocol": "vless","settings": {"vnext": [{"address": "95.163.211.22", "port": 443, "users": [{"id": "b2b8bd00-2e42-4875-8d7b-bcf97093a1d4", "encryption": "none", "flow": "xtls-rprx-vision"}]}]},"streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "fi.sellflow.org", "publicKey": "SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc", "shortId": "", "fingerprint": "firefox" } }},{"tag": "ПУЧУТИПУ","protocol": "vless","settings": {"vnext": [{"address": "45.131.214.45", "port": 443, "users": [{"id": "e64100fd-773d-4cc6-adbe-a4c94876d07a", "encryption": "none"}]}]},"streamSettings": { "network": "grpc", "security": "reality", "realitySettings": { "serverName": "d.primarymaster.online", "publicKey": "ID6lMOmt7BiuPHjZkoLSWNR9ONmB6b4L9skIIFjtXxU", "shortId": "" }, "grpcSettings": { "serviceName": "" } }},{"tag": "ГЕВЕШАЗА","protocol": "vless","settings": {"vnext": [{"address": "89.169.39.55", "port": 443, "users": [{"id": "c61ec320-29f1-4e00-9272-8b676e6957b4", "encryption": "none", "flow": "xtls-rprx-vision"}]}]},"streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "max.ru", "publicKey": "Lbug_wz0y9xgKeDK44D9kuUap0fXzNKyv_nMJxnZRzU", "shortId": "825867", "fingerprint": "chrome" } }},{"protocol": "freedom","tag": "direct"},{"protocol": "blackhole","tag": "block"}],"observatory": {"probeURL": "gstatic.com","probeInterval": "30s","subjectSelector": ["КОНОРУЗА", "ЧОКУСОУС", "ШУВАНУПУ", "СИБИСОЖЕ", "ЧАМУЖОНЯ","ЗУГУНАКО", "ГАПАГУУС", "ХУБОБУКО", "КАБОКУБО", "НУТОБУНЯ","ШУГЕТОША", "ЛУГЕРАША", "ЛАМУЛАБО", "ЖАМИРИША", "ВИДУВАКА","СОХОКОША", "МОГЕМОЛЯ", "ДОСАНИЗА", "РУШОВИНЯ", "ПОТУБИКА","ВУГЕТАУС", "ПУЧУТИПУ", "КИВОХАБА", "ГЕВЕШАЗА"],"enableConcurrency": true},"remarks": "SoS 01 VPN ⚡","_meta": {"profile-title": "SoS 01 VPN ⚡","profile-update-interval": 1,"subscription-userinfo": "upload=1073741824000; download=1073741824000; total=10737418240000; expire=1782864000","support-url": "https://","profile-web-page-url": "https://","announce": "Привет халявщики и тунеядцы"}}]
+I3Byb2ZpbGUtdGl0bGU6IFNvUyAwMSBWUE4g⚡CiNwcm9maWxlLXVwZGF0ZS1pbnRlcnZhbDog
+MQojc3Vic2NyaXB0aW9uLXVzZXJpbmZvOiB1cGxvYWQ9MTA3Mzc0MTgyNDAwMDsgZG93bmxvYWQ9
+MTA3Mzc0MTgyNDAwMDsgdG90YWw9MTA3Mzc0MTgyNDAwMDA7IGV4cGlyZT0xNzgyODY0MDAwCiNz
+dXBwb3J0LXVybDogaHR0cHM6Ly8KI3Byb2ZpbGUtd2ViLXBhZ2UtdXJsOiBodHRwcz6Ly8KI2Fubm
+91bmNlOiAiUHLQuNCy0LXRgiDRhdCw0LvRj9Cy0YnQuNC60Lgg0Lgg0YLRg9C90LXRj9C00YbRiyIK
+CnZsZXNzOi8vNzM3OTZlNjMtMDAwMC00MDAwLTgwMDAtMDAwMDAwMDAwMDAwQG5haGFuLWNvcmUu
+ZmF0aXRlbGVncmFtLndvcmtlcnMuZGV2OjQ0Mz9lbmNyeXB0aW9uPW5vbmUmc2VjdXJpdHk9dGxz
+JnNuaT1uYWhhbi1jb3JlLmZhdGl0ZWxlZ3JhbS53b3JrZXJzLmRldiZmcD1jaHJvbWUmaW5zZWN1
+cmU9MCZhbGxvd0luc2VjdXJlPTAmdHlwZT13cyZob3N0PW5haGFuLWNvcmUuZmF0aXRlbGVncmFt
+LndvcmtlcnMuZGV2JnBhdGg9JTIGc3luYyNDT05PUlVaQQp2bGVzczovL2I5Y2QwMDU0LWUyODkt
+YTY0My0wNzFiLWUzOGNjN2I2Y2YyM0BwZWVrY29uZmlnZy52aXBzZXJ2ZXIxLTM5ZC53b3JrZXJz
+LmRldjo0NDM/cGF0aD0vc3luYyZzZWN1cml0eT10bHMmZW5jcnlwdGlvbj1ub25lJmluc2VjdXJl
+PTAmaG9zdD1wZWVrY29uZmlnZy52aXBzZXJ2ZXIxLTM5ZC53b3JrZXJzLmRldiZmcD1jaHJvbWUm
+dHlwZT13cyZhbGxvd0luc2VjdXJlPTAmc25pPXBlZWtjb25maWdnLnZpcHNlcnZlcjEtMzlkLndv
+cmtlcnMuZGV2I0NIT0tVU09VUwp2bGVzczovL2YwZTkyMmIzLWM5MDctNDYxYy05MDRmLTkxNjA3
+ZTdhNWI4YkBzd2VkZW4xLmJhbm92YW5vLnNwYWNlOjQ0Mz9zbmk9d3d3Lm52aWRpYS5jb20mZW5j
+cnlwdGlvbj1ub25lJmZwPWNocm9tZSZoZWFkZXJUeXBlPW5vbmUmdHlwZT10Y3AmZmxvdz14dGxz
+LXJwcmgtdmlzaW9uJnNpZD00OTk0NGQxZTAwJnNweD0vJnNlY3VyaXR5PXJlYWxpdHkmcGJrPWhp
+N0xnMnQ5eXdBS1N1by0stageSmRIQV9rdmVfdFpuTEt6Z2JLaydWRSZidXJtYWxkYT05YWRmZDk3
+ZiNTVVdBTlVQVUp2bGVzczovLzE3YzgxNWI2LThmODUtNDQ0Yi04ZTMxLWRiYzk2NTI3YTkyZUA1
+Ni4yMjguMTYuMjIwOjIwNTM/c2VjdXJpdHk9cmVhbGl0eSZlbmNyeXB0aW9uPW5vbmUmcGJrPWZ4
+a1Z1bmE3YVM0d01KNHczZk8tLXAzTHRwOHZKX3pPQXBVTUZ4OVdQaEkmaGVhZGVyVHlwZT1ub25l
+JmZwPWNocm9tZSZzcHg9JTIGdjJyYXliYXppJnR5cGU9dGNwJnNuaT13d3cuaW50ZWwuY29tJnNp
+ZD0xN2IwZGY5OTUyNjg1NmE2Jm5vbmNlPXdaUzdsSTdxI1NJQklTT0pFCnZsZXNzOi8vZTZhMDM3
+ZmYtMzkwOC00YmY5LWIzZTctYjExMzhkYTYwMWY5QDgzLjIyOC4yMzEuMTg4OjIyMDAwP3NlY3Vy
+aXR5PXJlYWxpdHkmZW5jcnlwdGlvbj1ub25lJnBiaz1OYlo0dWhKWjZ6cHZSTFhPRE5jVkRrOVVn
+Y0tOYWhwTjFoNzRDc1YwNEZzJmhlYWRlclR5cGU9JmZwPWNocm9tZSZzcHg9LyZ0eXBlPXRjcCZz
+bmk9d3d3LnlhaG9vLmNvbSZzaWQ9MTQjQ0FNVUpPTlhBCnZsZXNzOi8vMWRkYTlkMjYtN2MwNC00
+OGE2LTkzYjQtZTMwZmU3YTVkYTgwQDk0LjE4My4xODcuMzk6NDQ0P2Zsb3c9JmZwPWNocm9tZSZw
+Yms9d2d4alRsVnVCSTk4VC1RUlEydG1tSDU3c2VJZktDZEUycEJHTldYY09DbyZzZWN1cml0eT1y
+ZWFsaXR5JnNlcnZpY2VOYW1lPXdlYi5tYXgucnUmc2lkPTg2MTQ5NTY3ODlhYmNkZWYmc25pPXdl
+Yi5tYXgucnUmdHlwZT1ncnBjJmRlc2NyaXB0aW9ucz1DYm9ib2R1SW50ZXJuZXR1NzY4I1pVR1VO
+QUtPCnZsZXNzOi8vMTdjODE1YjYtOGY4NS00NDRiLThlMzEtZGJjOTY1MjdhOTJlQDU2LjIyOC4x
+Ni4yMjA6MjA1Mz9zcHg9JTIGdjJyYXliYXppJmZwPWNocm9tZSZoZWFkZXJUeXBlPW5vbmUmc2Vj
+dXJpdHk9cmVhbGl0eSZzaWQ9MTdiMGRmOTk1MjY4NTZhNiZzbmk9d3d3LmludGVsLmNvbSZ0eXBl
+PXRjcCZlbmNyeXB0aW9uPW5vbmUmcGJrPWZ4a1Z1bmE3YVM0d01KNHczZk8tLXAzTHRwOHZKX3pP
+QXBVTUZ4OVdQaEkjR0FQQURVVVMKdmxlc3M6Ly8xN2M4MTViNi04Zjg1LTQ0NGItOGUzMS1kYmM5
+NjUyN2E5MmVANDU2LjIyOC4xNi4yMjA6MjA1Mz9mcD1jaHJvbWUmcGJrPWZ4a1Z1bmE3YVM0d01K
+NHczZk8tLXAzTHRwOHZKX3pPQXBVTUZ4OVdQaEkmdHlwZT10Y3Amc3B4PSUyRHYycmF5YmF6aSZz
+ZWN1cml0eT1yZWFsaXR5JmVuY3J5cHRpb249bm9uZSZzaWQ9MTdiMGRmOTk1MjY4NTZhNiZoZWFk
+ZXJUeXBlPW5vbmUmc25pPXd3dy5pbnRlbC5jb20jWFVCT0JVS08Kdmxlc3M6Ly8xN2M4MTViNi04
+Zjg1LTQ0NGItOGUzMS1kYmM5NjUyN2E5MmVANDU2LjIyOC4xNi4yMjA6MjA1Mz9mcD1jaHJvbWUm
+c2lkPTExN2IwZGY5OTUyNjg1NmE2JmhlYWRlclR5cGU9bm9uZSZwYms9ZnhrVnVuYTdhUzR3TUo0
+dzNmTy0tcDNMdHA4dkpfel9PQXBVTUZ4OVdQaEkmc3B4PSUyRHYycmF5YmF6aSZlbmNyeXB0aW9u
+PW5vbmUmc2VjdXJpdHk9cmVhbGl0eSZ0eXBlPXRjcCZzbmk9d3d3LmludGVsLmNvbSNDQUJPS1VC
+Twp2bGVzczovLzE3YzgxNWI2LThmODUtNDQ0Yi04ZTMxLWRiYzk2NTI3YTkyZUA1Ni4yMjguMTYu
+MjIwOjIwNTM/c2VjdXJpdHk9cmVhbGl0eSZlbmNyeXB0aW9uPW5vbmUmcGJrPWZ4a1Z1bmE3YVM0
+d01KNHczZk8tLXAzTHRwOHZKX3pPQXBVTUZ4OVdQaEkmaGVhZGVyVHlwZT1ub25lJmZwPWNocm9t
+ZSZzcHg9JTIGdjJyYXliYXppJnR5cGU9dGNwJnNuaT13d3cuaW50ZWwuY29tJnNpZD0xN2IwZGY5
+OTUyNjg1NmE2Jm5vbmNlPWw2X2ZkNF9aI05VVE9CVU5ZQQp2bGVzczovLzE3YzgxNWI2LThmODUt
+NDQ0Yi04ZTMxLWRiYzk2NTI3YTkyZUA1Ni4yMjguMTYuMjIwOjIwNTM/c2VjdXJpdHk9cmVhbGl0
+eSZlbmNyeXB0aW9uPW5vbmUmcGJrPWZ4a1Z1bmE3YVM0d01KNHczZk8tLXAzTHRwOHZKX3pPQXBV
+TUZ4OVdQaEkmaGVhZGVyVHlwZT1ub25lJmZwPWNocm9tZSZzcHg9JTIGdjJyYXliYXppJnR5cGU9
+dGNwJnNuaT13d3cuaW50ZWwuY29tJnNpZD0xN2IwZGY5OTUyNjg1NmE2JmZyZWVpbnRlcm5ldD1r
+aXp5YWtfdnBuMTc4MjQxNjUxMTE5OSNTVUdFVE9TSEEgCnZsZXNzOi8vMTdjODE1YjYtOGY4NS00
+NDRiLThlMzEtZGJjOTY1MjdhOTJlQDU2LjIyOC4xNi4yMjA6MjA1Mz9zZWN1cml0eT1yZWFsaXR5
+JmVuY3J5cHRpb249bm9uZSZwYms9ZnhrVnVuYTdhUzR3TUo0dzNmTy0tcDNMdHA4dkpfel9PQXBV
+TUZ4OVdQaEkmaGVhZGVyVHlwZT1ub25lJmZwPWNocm9tZSZzcHg9L3YycmF5YmF6aSZ0eXBlPXRj
+cCZzbmk9d3d3LmludGVsLmNvbSZzaWQ9MTdiMGRmOTk1MjY4NTZhNiNMVUdFUkFTSEEKdmxlc3M6
+Ly8xN2M4MTViNi04Zjg1LTQ0NGItOGUzMS1kYmM5NjUyN2E5MmVANDU2LjIyOC4xNi4yMjA6MjA1
+Mz9zZWN1cml0eT1yZWFsaXR5JmVuY3J5cHRpb249bm9uZSZwYms9ZnhrVnVuYTdhUzR3TUo0dzNm
+Ty0tcDNMdHA4dkpfel9PQXBVTUZ4OVdQaEkmaGVhZGVyVHlwZT1ub25lJmZwPWNocm9tZSZzcHg9
+JTIGdjJyYXliYXppJnR5cGU9dGNwJnNuaT13d3cuaW50ZWwuY29tJnNpZD0xN2IwZGY5OTUyNjg1
+NmE2Jl90PWM1NTI1MDBiI0xBTVVMQUJPCnZsZXNzOi8vYjJiOGJkMDAtMmU0Mi00ODc1LThkN2It
+YmNmOTcwOTNhMWQ0QDk1LjE2My4yMTEuMjA2OjQ0Mz9lbmNyeXB0aW9uPW5vbmUmc2VjdXJpdHk9
+cmVhbGl0eSZ0eXBlPXRjcCZzbmk9YWkuc2VsbGZsb3cub3JnJmZwPWZpcmVmb3gmcGJrPVNiVktP
+RU1qSzBzSWxid2c0YWt5Qmc1bUw1S1p3d0ItZWQ0ZUVFN1luUmMmZmxvdz14dGxzLXJwcmgtdmlz
+aW9uI0pBTUlSSVNIQQp2bGVzczovL2Q2Njk1MTA1LThlNDAtNGE0NS1hODdlLWQzY2Y1NjFjOWZh
+NEA1Ljc4LjE2My4xMTc6NTU1NTU/ZnA9Y2hyb21lJnR5cGU9dGNwJnNuaT15YWhvby5jb20maGVh
+ZGVyVHlwZT1ub25lJnNpZD04ODBlZWVlZjQ5MjdlZWQ1JmVuY3J5cHRpb249bm9uZSZwYms9WFB1
+TEU0OVB0RGVpeHp3T21FSHVNRlNaZXhZRFQRaWZadHM5OXc1ZTRRWSZzZWN1cml0eT1yZWFsaXR5
+JnNlcT15b3VfYXJlX2JlYXV0aWZ1bDE4MTEjVklEVVZBS0EKdmxlc3M6Ly9kNjY5NTEwNS04ZTQw
+LTRhNDUtYTg3ZS1kM2NmNTYxYzlmYTRBNS43OC4xYTMuMTE3OjU1NTU1P3R5cGU9dGNwJmZwPWNo
+cm9tZSZlbmNyeXB0aW9uPW5vbmUmc2lkPTg4MGVlZWVmNDkyN2VlZDUmc2VjdXJpdHk9cmVhbGl0
+eSZwYms9WFB1TEU0OVB0RGVpeHp3T21FSHVNRlNaZXhZRFQRaWZadHM5OXc1ZTRRWSZzbmk9eWFo
+b28uY29tJmhlYWRlclR5cGU9bm9uZSZub25jZT1GNkZIUW8xMyNTVUhPS09TSEEKdmxlc3M6Ly8x
+MmRiN2ZlNy1kNzA1LTRiNmUtYWIzMC03YTc1OGUwYmNkM2ZASmF2YS5jZG5mb3JnZS50b3A6ODA4
+MD9lbmNyeXB0aW9uPW5vbmUmZXh0cmE9eyJzY01heEVhY2hQb3N0Qnl0ZXMiOiIxMDAwMDAwIiwie
+FBhZGRpbmdCeXRlcyI6IjEwMC0xMDAwIn0mZnA9Y2hyb21lJmhvc3Q9Jm1vZGU9YXV0byZwYXRo
+PS8mcGJrPXVKc1pYLWlmMUlQOUVKc05mcTJ3blRTQUZDdm5GYXd3TVc2WmRvWGZ2UUUmc2VjdXJp
+dHk9cmVhbGl0eSZzaWQ9OGEyZTIzYmQ0MDQxOGI3ZSZzbmk9WmFyZWJpbi5pciZzcHg9L0cyWkcz
+MW5EOHQ5cVl3WSZ0eXBlPXhodHRwJnhfcGFkZGluZ19ieXRlcz0xMDAtMTAwMCNNT0dFTU9MWUEK
+dmxlc3M6Ly9iMmI4YmQwMC0yZTQyLTQ4NzUtOGQ3Yi1iY2Y5NzA5M2ExZDRAOTUuMTYzLjIxMS4y
+MDY6NDQzP3NuaT1hdC5zZWxsZmxvdy5vcmcmcGJrPVNiVktPRU1qSzBzSWxid2c0YWt5Qmc1bUw1
+S1p3d0ItZWQ0ZUVFN1luUmMmdHlwZT10Y3AmZW5jcnlwdGlvbj1ub25lJmZsb3c9eHRscy1ycHJ4
+LXZpc2lvbiZmcD1maXJlZm94JnNlY3VyaXR5PXJlYWxpdHkmc2VxPXlvdV9hcmVfYmVhdXRpZnVs
+OTUwNyNET1NBTklaQQp2bGVzczovL2IyYjhiZDAwLTJlNDItNDg3NS14ZDdiLWJjZjk3MDkzYTFk
+NEA5NS4xNjMuMjExLjE3OjQ0Mz9lbmNyeXB0aW9uPW5vbmUmc2VjdXJpdHk9cmVhbGl0eSZ0eXBl
+PXRjcCZzbmk9Zmkuc2VsbGZsb3cub3JnJmZwPWZpcmVmb3gmcGJrPVNiVktPRU1qSzBzSWxid2c0
+YWt5Qmc1bUw1S1p3d0ItZWQ0ZUVFN1luUmMmZmxvdz14dGxzLXJwcmgtdmlzaW9uI1JVU0hPVklO
+WUEKdmxlc3M6Ly9iMmI4YmQwMC0yZTQyLTQ4NzUtOGQ3Yi1iY2Y5NzA5M2ExZDRAOTUuMTYzLjIx
+MS4yMjo0NDM9ZW5jcnlwdGlvbj1ub25lJnNlY3VyaXR5PXJlYWxpdHkmdHlwZT10Y3Amc25pPWZp
+LnNlbGxmbG93Lm9yZyZmcD1maXJlZm94JnBiaz1TYlZLT0VNakswc0lsYndnNGFreUJnNW1MNUta
+d3dCLWVkNGVFRTdZblJjJmZsb3c9eHRscy1ycHJ4LXZpc2lvbiZkZXNjcmlwdGlvbnM9bNGOYm9k
+dV9zZWJ5YTEzMjRlZiNQT1RVQklLQQp2bGVzczovL2U2YTAzN2ZmLTM5MDgtNGJmOS1iM2U3LWIx
+MTM4ZGE2MDFmOUA4My4yMjguMjMxLjE4ODoyMjAwMD9zZWN1cml0eT1yZWFsaXR5JmVuY3J5cHRp
+b249bm9uZSZwYms9TmJaNHVoSlo2enB2UkxYT0ROY1ZEazlVZ2NLTmFocE4xaDc0Q3NWMDRGcyZo
+ZWFkZXJUeXBlPSZmcD1jaHJvbWUmc3B4PS8mdHlwZT10Y3Amc25pPXd3dy55YWhvby5jb20mc2lk
+PTE0JmZyZWVpbnRlcm5ldD1raXp5YWtfdnBuMTc4MjQwOTU2MzY5MSNWVUdFVEFVUwp2bGVzczov
+L2U2NDEwMGZkLTc3M2QtNGNjNi1hZGJlLWE0Yzk0ODc2ZDA3YUA0NS4xMzEuMjE0LjQ1OjQ0My8/
+cGJrPUlENmxNTW10N0JpdVB बंदूक Hda29MU0ZOUjlPTm1CNmI0TDlza0lJRmp0WHhVJnNpZD0m
+Zmxvdz0mZW5jcnlwdGlvbj1ub25lJnNlY3VyaXR5PXJlYWxpdHkmZnA9Y2hyb21lJnNuaT1kLnBy
+aW1hcnltYXN0ZXIub25saW5lJnR5cGU9Z3JwYyNQVUNIVVRJUFUgCnZsZXNzOi8vYjJiOGJkMDAt
+MmU0Mi00ODc1LThkN2ItYmNmOTcwOTNhMWQ0QDk1LjE2My4yMTEuMjI6NDQzP2VuY3J5cHRpb249
+bm9uZSZzZWN1cml0eT1yZWFsaXR5JnR5cGU9dGNwJnNuaT1maS5zZWxsZmxvdy5vcmcmZnA9Zmly
+ZWZveCZwYms9U2JWS09FTWpLMHNJbGJ3ZzRha3lCZzVtTDVLWnd3Qi1lZDRlRUU3WW5SYyZmbG93
+PXh0bHMtcnByeC12aXNpb24mc2VxPXlvdV9hcmVfYmVhdXRpZnVsMDEwN crappyNLUtJVU9IQUJB
+CnZsZXNzOi8vYzYxZWMzMjAtMjlmMS00ZTAwLTkyNzItOGI2NzZlNjk1N2I0QDg5LjE2OS4zOS41
+NTo0NDM/VGVsZWdyYW09QEdvemFyZ2FoQXphZCxAR296YXJnYWhBemFkLERHb3phcmdhaEF6YWQs
+QEdvemFyZ2FoQXphZCxAR296YXJnYWhBemFkLERHb3phcmdhaEF6YWQsQEdvemFyZ2FoQXphZCZz
+ZWN1cml0eT1yZWFsaXR5JmVuY3J5cHRpb249bm9uZSZwYms9TGJ1Z193ejB5OXhnS2VESzQ0RDlr
+VVVhcDBmWHpOQXl2X25NSnhuWlJ6VSZoZWFkZXJUeXBlPW5vbmUmZnA9Y2hyb21lJnR5cGU9dGNw
+JmZsb3c9eHRscy1ycHJ4LXZpc2lvbiZzbmk9bWF4LnJ1JnNpZD04MjU4Njcmbm9uY2U9MTVRTnJk
+Q3MjR0VWRVNIQVpB
