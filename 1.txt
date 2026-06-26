@@ -1,4 +1,3 @@
-[
 {
         "profile-title": "SoSi 1 VPN ⚡",
         "profile-update-interval": 1,
@@ -8,6 +7,8 @@
         "announce": "Привет халявщики и тунеядцы",
         "configs": all_configs_list  # Массив всех созданных прокси-конфигураций
 },
+[
+
   {
     "remarks": "ШУВАНУПУ",
     "dns": {
