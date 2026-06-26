@@ -4,7 +4,7 @@ import urllib.request
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         # 1. Ссылка на ваш оригинальный Base64 файл на GitHub
-        github_url = "https://githubusercontent.com"
+        github_url = "https://raw.githubusercontent.com/IlinAlexVikt/xxx/refs/heads/main/1.txt"
         
         try:
             # Скачиваем файл с GitHub
