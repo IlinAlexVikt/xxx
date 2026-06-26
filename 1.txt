@@ -175,7 +175,14 @@
         "protocol": "blackhole"
       }
     ],
-    "remarks": " 🇦🇪  LTE | Дубай | oIo"
+    "remarks": "SoS 01 VPN ⚡",
+    "meta": {
+      "serverDescription": "Привет халявщики и тунеядцы",
+      "updateInterval": 1,
+      "subscriptionUserinfo": "upload=1073741824000; download=1073741824000; total=10737418240000; expire=1782864000",
+      "supportUrl": "https://",
+      "profileWebPageUrl": "https://"
+    }
   },
  
 
