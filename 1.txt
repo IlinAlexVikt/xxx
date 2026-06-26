@@ -1,5 +1,185 @@
 [
-  {
+ {
+  "dns": {
+    "servers": [
+      "1.1.1.1",
+      "1.0.0.1"
+    ],
+    "queryStrategy": "UseIP"
+  },
+  "routing": {
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "keyword:max.ru",
+          "keyword:oneme"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:sub.harknmav.fun",
+          "keyword:tbank",
+          "keyword:t-bank",
+          "keyword:tinkoff",
+          "keyword:t-static",
+          "keyword:vk",
+          "keyword:userapi",
+          "keyword:mycdn.me",
+          "keyword:mail.ru",
+          "keyword:imgsmail",
+          "keyword:ok.ru",
+          "keyword:okcdn.ru",
+          "keyword:yandex",
+          "keyword:ya.ru",
+          "keyword:yastatic",
+          "keyword:kinopoisk",
+          "keyword:kpcdn",
+          "keyword:dzen",
+          "keyword:auto.ru",
+          "keyword:rutube",
+          "keyword:ivi",
+          "keyword:kion",
+          "keyword:okko",
+          "keyword:wink",
+          "keyword:avito",
+          "keyword:ozon",
+          "keyword:wildberries",
+          "keyword:wb.ru",
+          "keyword:megamarket",
+          "keyword:lemanapro",
+          "keyword:magnit",
+          "5ka",
+          "keyword:perekrestok",
+          "keyword:detmir",
+          "keyword:samokat",
+          "keyword:kuper",
+          "keyword:auchan",
+          "keyword:2gis",
+          "keyword:gismeteo",
+          "keyword:gosuslugi",
+          "keyword:gov.ru",
+          "keyword:gu-st.ru",
+          "keyword:nalog",
+          "keyword:mos.ru",
+          "keyword:goskey",
+          "keyword:rustore",
+          "keyword:sberdevices",
+          "keyword:giga.chat",
+          "keyword:alfa",
+          "keyword:vtb",
+          "keyword:psbank",
+          "keyword:cbr",
+          "keyword:nspk",
+          "keyword:mts",
+          "keyword:megafon",
+          "keyword:beeline",
+          "keyword:tele2",
+          "keyword:t2.ru",
+          "keyword:rzd",
+          "keyword:aeroflot",
+          "keyword:pobeda",
+          "keyword:tutu",
+          "keyword:cdek",
+          "keyword:pochta",
+          "keyword:kaspersky",
+          "keyword:rt.ru",
+          "keyword:hh",
+          "keyword:rambler",
+          "keyword:rbc",
+          "keyword:zvuk.com",
+          "keyword:lenta"
+        ],
+        "outboundTag": "direct"
+      }
+    ],
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs"
+  },
+  "inbounds": [
+    {
+      "tag": "socks",
+      "port": 10808,
+      "listen": "127.0.0.1",
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "allowTransparent": false
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "tls",
+          "quic"
+        ]
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "proxy",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "city-most-3.harknmav.fun",
+            "port": 443,
+            "users": [
+              {
+                "id": "adfb26d5-4a23-4263-a674-c3913113bd04",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "tcpSettings": {},
+        "security": "reality",
+        "realitySettings": {
+          "serverName": "ads.x5.ru",
+          "publicKey": "Yc8UKKVXZed7fz1yxWOzBamSns-_t3thFdHr8DIzkyc",
+          "shortId": "4e352b0d4d15e0f9",
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "protocol": "freedom"
+    },
+    {
+      "tag": "block",
+      "protocol": "blackhole"
+    }
+  ],
+  "remarks": " 🇦🇪  LTE | Дубай | oIo"
+},
+ 
+
+{
   "dns": {
     "servers": [
       "1.1.1.1",
