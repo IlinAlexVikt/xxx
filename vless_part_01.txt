@@ -1,6 +1,6 @@
 #profile-title: SoS 01 VPN ⚡
 #profile-update-interval: 1
-#subscription-userinfo: upload=1073741824000; download=1073741824000; total=10737418240000; expire=1782864000
+#subscription-userinfo: upload=1073741824000; download=1073741824000; total=10737418240000; expire=1785801600
 #support-url: https://
 #profile-web-page-url: https://
 #announce: "Привет халявщики и тунеядцы"
