@@ -5,9 +5,9 @@
 #profile-web-page-url: https://
 #announce: "Привет халявщики и тунеядцы"
 
-vless://eece4171-e025-40a3-9027-e395036ff99d@45.198.80.11:443?sni=storage.yandex.net&flow=xtls-rprx-vision&type=tcp&fp=firefox&pbk=zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg&sid=28047c78b3f5ee2c&security=reality&burmalda=c28c72e8#ШОСАМУБА
-vless://4af89b09-ce0c-4dab-b798-629d8b900af0@dp-hu-01.live:443?sid=f4b4a6365558ea2e&fp=firefox&flow=xtls-rprx-vision&encryption=none&type=tcp&pbk=7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg&security=reality&sni=storage.yandex.net&headerType=none#ХИТИТИКА
-vless://eece4171-e025-40a3-9027-e395036ff99d@dp-es-01.live:443?type=tcp&sid=28047c78b3f5ee2c&flow=xtls-rprx-vision&encryption=none&security=reality&fp=firefox&pbk=zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg&sni=storage.yandex.net&nonce=gHeSQxnz#МИШАЖОБО
-vless://eece4171-e025-40a3-9027-e395036ff99d@dp-es-01.live:443?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg&sid=28047c78b3f5ee2c&sni=storage.yandex.net&_t=8653ef37#РУВОКИНЯ
-vless://3e0a91ec-05a3-461f-9367-14b289a5b54b@de.monkeyisland.xyz:443?fp=firefox&pbk=2AKBmK0PMf2zUMhRo1Ad-WNf_XoRk3AN-SGo6ZdhxA4&security=reality&type=tcp&flow=xtls-rprx-vision&sid=19e741a804f420a7&sni=de.monkeyisland.xyz#ПОШАХИНЯ
+vless://eece4171-e025-40a3-9027-e395036ff99d@45.198.80.11:443?sni=storage.yandex.net&flow=xtls-rprx-vision&type=tcp&fp=firefox&pbk=zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg&sid=28047c78b3f5ee2c&security=reality&burmalda=c28c72e8#Подписка истекла
+vless://4af89b09-ce0c-4dab-b798-629d8b900af0@dp-hu-01.live:443?sid=f4b4a6365558ea2e&fp=firefox&flow=xtls-rprx-vision&encryption=none&type=tcp&pbk=7zd9mJilgjOrg_ohtw23Vmio-pdnYqeP_r-kiWt87Cg&security=reality&sni=storage.yandex.net&headerType=none#оформи новую
+vless://eece4171-e025-40a3-9027-e395036ff99d@dp-es-01.live:443?type=tcp&sid=28047c78b3f5ee2c&flow=xtls-rprx-vision&encryption=none&security=reality&fp=firefox&pbk=zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg&sni=storage.yandex.net&nonce=gHeSQxnz#на день
+vless://eece4171-e025-40a3-9027-e395036ff99d@dp-es-01.live:443?type=tcp&security=reality&encryption=none&flow=xtls-rprx-vision&fp=firefox&pbk=zr8_rtHm86s_G1gfRwNtunStGngYZSdYkA3PyBFXpDg&sid=28047c78b3f5ee2c&sni=storage.yandex.net&_t=8653ef37#Неделю
+vless://3e0a91ec-05a3-461f-9367-14b289a5b54b@de.monkeyisland.xyz:443?fp=firefox&pbk=2AKBmK0PMf2zUMhRo1Ad-WNf_XoRk3AN-SGo6ZdhxA4&security=reality&type=tcp&flow=xtls-rprx-vision&sid=19e741a804f420a7&sni=de.monkeyisland.xyz#месяц
 
