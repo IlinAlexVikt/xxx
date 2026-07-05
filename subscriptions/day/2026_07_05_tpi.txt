@@ -4,8 +4,6 @@
 #support-url: https://
 #profile-web-page-url: https://
 #announce: "Привет халявщики и тунеядцы"
-
-
 vless://3e7cede4-721a-4807-b0a2-5fe6586af907@45.194.10.123:8443?encryption=none&flow=xtls-rprx-vision&security=reality&sni=storage.yandex.net&fp=firefox&pbk=L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA&sid=2cfb5a0ae8ab0cb0&type=tcp&headerType=none#ГУПАПУША
 vless://3e7cede4-721a-4807-b0a2-5fe6586af907@45.194.10.132:8443?type=tcp&flow=xtls-rprx-vision&encryption=none&fp=firefox&sni=storage.yandex.net&pbk=L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA&sid=2cfb5a0ae8ab0cb0&security=reality#КУДУХИША
 vless://3e7cede4-721a-4807-b0a2-5fe6586af907@45.194.10.43:8443?security=reality&encryption=none&pbk=L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=storage.yandex.net&sid=2cfb5a0ae8ab0cb0#БИМУЗИКА
