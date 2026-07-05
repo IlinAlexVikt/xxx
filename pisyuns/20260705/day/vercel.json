@@ -1,5 +1,13 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/api/sub" }
+  "version": 2,
+  "routes": [
+    {
+      "src": "/1.txt",
+      "dest": "/1.txt",
+      "headers": {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-cache, no-store, must-revalidate"
+      }
+    }
   ]
 }
