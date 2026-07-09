@@ -1,6 +1,6 @@
 #profile-title: from 2026_07_05
 #profile-update-interval: 1
-#subscription-userinfo: upload=1073741824000; download=1073741824000; total=10737418240000; expire=1783457999
+#subscription-userinfo: upload=0; download=0; total=10737418240000; expire=1783457999
 #support-url: https://
 #profile-web-page-url: https://
 #announce: "Привет халявщики и тунеядцы"
