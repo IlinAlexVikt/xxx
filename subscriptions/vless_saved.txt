@@ -235,3 +235,4 @@ vless://3e7cede4-721a-4807-b0a2-5fe6586af907@45.194.10.66:8443?type=tcp&encrypti
 vless://3e7cede4-721a-4807-b0a2-5fe6586af907@45.194.10.176:8443?type=tcp&pbk=L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA&fp=firefox&security=reality&sni=storage.yandex.net&sid=2cfb5a0ae8ab0cb0&encryption=none&seq=you_are_beautiful0909#НОГИНИХА
 vless://3e7cede4-721a-4807-b0a2-5fe6586af907@45.194.10.102:8443?security=reality&sni=storage.yandex.net&type=tcp&fp=firefox&pbk=L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA&sid=2cfb5a0ae8ab0cb0#ВОВОЖОКО
 vless://3e7cede4-721a-4807-b0a2-5fe6586af907@45.194.10.7:8443?security=reality&sni=storage.yandex.net&fp=firefox&type=tcp&sid=2cfb5a0ae8ab0cb0&encryption=none&pbk=L3X1eh1Jq_6PKJ6LlwjgiWq0XNaDOqCVKgIElJ5nkVA#ГОХИКАХА
+vless://0000@8.8.8.8:443?type=xhttp&headerType=none&security=tls&encryption=none&fp=chrome&alpn=h2%2Chttp%2F1.1&path=%2F&insecure=0#ПОДПИСКА КАЮК
