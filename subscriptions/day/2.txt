@@ -1,1 +1,1 @@
-+2
+vless://0000@8.8.8.8:443?type=xhttp&headerType=none&security=tls&encryption=none&fp=chrome&alpn=h2%2Chttp%2F1.1&path=%2F&insecure=0#ПОДПИСКА КАЮК
