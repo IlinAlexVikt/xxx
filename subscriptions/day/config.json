@@ -20,9 +20,44 @@
       "settings": {
         "udp": true,
         "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ]
+      }
+    },
+    {
+      "tag": "http-in",
+      "port": 10809,
+      "listen": "127.0.0.1",
+      "protocol": "http",
+      "settings": {
+        "timeout": 300
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ]
       }
     }
   ],
+  "observatory": {
+    "subjectSelector": [
+      "b1-"
+    ],
+    "probeUrl": "https://cloudflare.com",
+    "probeInterval": "1m",
+    "enableConcurrency": true
+  },
   "outbounds": [
     {
       "tag": "b1-server-primary-RU",
@@ -30,11 +65,11 @@
       "settings": {
         "vnext": [
           {
-            "address": "159.195.22.155",
-            "port": 443,
+            "address": "194.164.217.139",
+            "port": 448,
             "users": [
               {
-                "id": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
+                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
                 "encryption": "none",
                 "flow": "xtls-rprx-vision"
               }
@@ -51,9 +86,9 @@
           }
         },
         "realitySettings": {
-          "serverName": "2.oncloudnineservicestreang.com",
-          "shortId": "d8d3dc6c3ca45dd4",
-          "publicKey": "Mg3ZxHNUFbX96q1HpS3WReeM7rnhEsXXtlEzxALeTDc",
+          "serverName": "www.samsung.com",
+          "shortId": "05fdaa8a05be46a9",
+          "publicKey": "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo",
           "fingerprint": "firefox",
           "spiderX": "/"
         }
@@ -104,5 +139,96 @@
       "protocol": "blackhole",
       "settings": {}
     }
-  ]
+  ],
+  "routing": {
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "geosite:category-ads-all",
+          "geosite:win-spy",
+          "geosite:win-update",
+          "geosite:category-malicious",
+          "geosite:category-phishing"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
+          "domain:ru",
+          "domain:su",
+          "domain:xn--p1ai",
+          "domain:moscow",
+          "domain:ya.cc",
+          "domain:yandex.com",
+          "domain:yandex.net",
+          "domain:yango.com",
+          "domain:vk.com",
+          "domain:vk.cc",
+          "domain:mvk.com",
+          "domain:mycdn.me",
+          "domain:my.com",
+          "domain:my.games",
+          "domain:ok.me",
+          "domain:kaspersky.com",
+          "domain:ozon.com",
+          "domain:ozon.by",
+          "domain:ozon.kz",
+          "domain:wildberries.by",
+          "domain:wildberries.kz",
+          "domain:2gis.com",
+          "domain:magnit.com",
+          "domain:fix-price.com",
+          "domain:x5.tech",
+          "domain:megafon.com",
+          "domain:moex.com",
+          "domain:okko.tv",
+          "domain:okko.sport",
+          "domain:boosty.to",
+          "domain:lenta.com",
+          "domain:meduza.io",
+          "domain:premier.one",
+          "domain:hh.by",
+          "domain:hh.kz",
+          "domain:mosmetro.tech",
+          "domain:avs.io"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "socks",
+          "http-in"
+        ],
+        "network": "tcp,udp",
+        "balancerTag": "lb_b1_ping"
+      }
+    ],
+    "balancers": [
+      {
+        "tag": "lb_b1_ping",
+        "selector": [
+          "b1-"
+        ],
+        "strategy": {
+          "type": "leastLoad",
+          "settings": {
+            "maxRTT": "3s",
+            "cost_step": 0
+          }
+        }
+      }
+    ]
+  }
 }
