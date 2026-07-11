@@ -1,8 +1,5 @@
 {
-  "remarks": "🇪🇺 Автовыбор b1 + HTTP + Блокировка рекламы",
-  "log": {
-    "loglevel": "warning"
-  },
+  "remarks": "🇪🇺 Автовыбор (Только P1 с резервом)",
   "dns": {
     "servers": [
       "1.1.1.1",
@@ -10,6 +7,9 @@
       "8.8.4.4"
     ],
     "queryStrategy": "UseIPv4"
+  },
+  "log": {
+    "loglevel": "warning"
   },
   "inbounds": [
     {
@@ -32,27 +32,20 @@
       }
     },
     {
-      "tag": "http-in",
-      "port": 10809,
+      "tag": "entry-tier3",
       "listen": "127.0.0.1",
-      "protocol": "http",
+      "port": 10801,
+      "protocol": "dokodemo-door",
       "settings": {
-        "timeout": 300
-      },
-      "sniffing": {
-        "enabled": true,
-        "routeOnly": true,
-        "destOverride": [
-          "http",
-          "tls",
-          "quic"
-        ]
+        "address": "127.0.0.1",
+        "port": 0,
+        "network": "tcp,udp"
       }
     }
   ],
   "observatory": {
     "subjectSelector": [
-      "b1-"
+      "p1-"
     ],
     "probeUrl": "https://cloudflare.com",
     "probeInterval": "1m",
@@ -60,101 +53,95 @@
   },
   "outbounds": [
     {
-      "tag": "b1-server-primary-RU",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "194.164.217.139",
-            "port": 448,
-            "users": [
-              {
-                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "tcpSettings": {
-          "header": {
-            "type": "none"
-          }
-        },
-        "realitySettings": {
-          "serverName": "www.samsung.com",
-          "shortId": "05fdaa8a05be46a9",
-          "publicKey": "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo",
-          "fingerprint": "firefox",
-          "spiderX": "/"
-        }
-      }
-    },
-    {
-      "tag": "b1-server-secondary-EU",
-      "protocol": "vless",
-      "settings": {
-        "vnext": [
-          {
-            "address": "194.164.217.139",
-            "port": 448,
-            "users": [
-              {
-                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
-        "tcpSettings": {
-          "header": {
-            "type": "none"
-          }
-        },
-        "realitySettings": {
-          "serverName": "www.samsung.com",
-          "shortId": "05fdaa8a05be46a9",
-          "publicKey": "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo",
-          "fingerprint": "firefox",
-          "spiderX": "/"
-        }
-      }
-    },
-    {
       "tag": "direct",
-      "protocol": "freedom",
-      "settings": {}
+      "protocol": "freedom"
     },
     {
       "tag": "block",
-      "protocol": "blackhole",
-      "settings": {}
+      "protocol": "blackhole"
+    },
+    {
+      "tag": "loop_to_tier3",
+      "protocol": "loopback",
+      "settings": {
+        "inboundTag": "entry-tier3"
+      }
+    },
+    {
+      "tag": "p1-НОБАРУКО",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "194.164.217.139",
+            "port": 448,
+            "users": [
+              {
+                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
+        },
+        "realitySettings": {
+          "serverName": "://samsung.com",
+          "shortId": "05fdaa8a05be46a9",
+          "publicKey": "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo",
+          "fingerprint": "firefox",
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-ВУЗАНУКО",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "194.164.217.139",
+            "port": 448,
+            "users": [
+              {
+                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
+        },
+        "realitySettings": {
+          "serverName": "://samsung.com",
+          "shortId": "05fdaa8a05be46a9",
+          "publicKey": "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo",
+          "fingerprint": "firefox",
+          "spiderX": "/"
+        }
+      }
     }
   ],
   "routing": {
     "domainMatcher": "hybrid",
     "domainStrategy": "AsIs",
     "rules": [
-      {
-        "type": "field",
-        "domain": [
-          "geosite:category-ads-all",
-          "geosite:win-spy",
-          "geosite:win-update",
-          "geosite:category-malicious",
-          "geosite:category-phishing"
-        ],
-        "outboundTag": "block"
-      },
       {
         "type": "field",
         "domain": [
@@ -206,27 +193,49 @@
         "outboundTag": "direct"
       },
       {
+        "ip": [
+          "89.208.85.188"
+        ],
+        "outboundTag": "direct"
+      },
+      {
         "type": "field",
         "inboundTag": [
-          "socks",
-          "http-in"
+          "socks"
         ],
         "network": "tcp,udp",
-        "balancerTag": "lb_b1_ping"
+        "balancerTag": "lb_ping"
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "entry-tier3"
+        ],
+        "balancerTag": "lb_tier3"
       }
     ],
     "balancers": [
       {
-        "tag": "lb_b1_ping",
+        "tag": "lb_ping",
         "selector": [
-          "b1-"
+          "p1-"
         ],
+        "fallbackTag": "loop_to_tier3",
         "strategy": {
           "type": "leastLoad",
           "settings": {
             "maxRTT": "3s",
             "cost_step": 0
           }
+        }
+      },
+      {
+        "tag": "lb_tier3",
+        "selector": [
+          "p1-"
+        ],
+        "strategy": {
+          "type": "leastLoad"
         }
       }
     ]
