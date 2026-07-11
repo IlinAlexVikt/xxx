@@ -69,141 +69,2227 @@
       }
     },
     {
-      "tag": "p1-frda-fLkVmG7fik",
+      "tag": "p1-ДУШОТАБО",
       "protocol": "vless",
       "settings": {
         "vnext": [
           {
-            "address": "2.26.129.246",
+            "address": "89.208.113.157",
             "port": 443,
             "users": [
               {
-                "id": "ec54f4bd-2458-4f88-a2ed-3878d87dfa1f",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
               }
             ]
           }
         ]
       },
       "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
         "tcpSettings": {
           "header": {
-            "type": "none"
+            "type": [
+              "none"
+            ]
           }
         },
         "realitySettings": {
-          "serverName": "ukrop.mycdn-me.ru",
-          "shortId": "5a8e1a04f3d92b67",
-          "publicKey": "gPTBA-gVUWAK9yziB_v_sGSncm0LwBQvEAsTQZK4jEE",
-          "fingerprint": "qq",
+          "serverName": [
+            "parisjetaime.com"
+          ],
+          "shortId": [
+            "5be8210215"
+          ],
+          "publicKey": [
+            "2dgS9vJTywAfGZmlkuzDIIXLUR-E1A-0na8_W--ruUc"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
           "spiderX": "/"
         }
       }
     },
     {
-      "tag": "p1-germany-1-DW9tXcDyuS",
+      "tag": "tier3-ДУШОТАБО",
       "protocol": "vless",
       "settings": {
         "vnext": [
           {
-            "address": "2.26.135.193",
+            "address": "89.208.113.157",
             "port": 443,
             "users": [
               {
-                "id": "ec54f4bd-2458-4f88-a2ed-3878d87dfa1f",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
               }
             ]
           }
         ]
       },
       "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
         "tcpSettings": {
           "header": {
-            "type": "none"
+            "type": [
+              "none"
+            ]
           }
         },
         "realitySettings": {
-          "serverName": "smorodina.mycdn-me.ru",
-          "shortId": "a1f9c0e21d7b6485",
-          "publicKey": "09O8bAlIWm9AGnNyxBtHwpYNQxlXPSQeQeKzS3ZMwGE",
-          "fingerprint": "qq",
+          "serverName": [
+            "parisjetaime.com"
+          ],
+          "shortId": [
+            "5be8210215"
+          ],
+          "publicKey": [
+            "2dgS9vJTywAfGZmlkuzDIIXLUR-E1A-0na8_W--ruUc"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
           "spiderX": "/"
         }
       }
     },
     {
-      "tag": "tier3-cu2-xQmyCpTCEh",
+      "tag": "p1-ВУЗАНУКО",
       "protocol": "vless",
       "settings": {
         "vnext": [
           {
-            "address": "178.248.235.173",
-            "port": 28443,
+            "address": "194.164.217.139",
+            "port": 448,
             "users": [
               {
-                "id": "ec54f4bd-2458-4f88-a2ed-3878d87dfa1f",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
+                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
               }
             ]
           }
         ]
       },
       "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
         "tcpSettings": {
           "header": {
-            "type": "none"
+            "type": [
+              "none"
+            ]
           }
         },
         "realitySettings": {
-          "serverName": "rutube.ru",
-          "shortId": "11c8a9e2d47b03af",
-          "publicKey": "PmezavnEpH4TEbt8A4qlrESwZ0qJJ2X0_RHKu9Bqe1g",
-          "fingerprint": "qq",
+          "serverName": [
+            "www.samsung.com"
+          ],
+          "shortId": [
+            "05fdaa8a05be46a9"
+          ],
+          "publicKey": [
+            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
           "spiderX": "/"
         }
       }
     },
     {
-      "tag": "tier3-mt-WU5gmTpT9E",
+      "tag": "tier3-ВУЗАНУКО",
       "protocol": "vless",
       "settings": {
         "vnext": [
           {
-            "address": "178.248.235.173",
-            "port": 28443,
+            "address": "194.164.217.139",
+            "port": 448,
             "users": [
               {
-                "id": "ec54f4bd-2458-4f88-a2ed-3878d87dfa1f",
-                "encryption": "none",
-                "flow": "xtls-rprx-vision"
+                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
               }
             ]
           }
         ]
       },
       "streamSettings": {
-        "network": "tcp",
-        "security": "reality",
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
         "tcpSettings": {
           "header": {
-            "type": "none"
+            "type": [
+              "none"
+            ]
           }
         },
         "realitySettings": {
-          "serverName": "rutube.ru",
-          "shortId": "11c8a9e2d47b03af",
-          "publicKey": "PmezavnEpH4TEbt8A4qlrESwZ0qJJ2X0_RHKu9Bqe1g",
-          "fingerprint": "qq",
+          "serverName": [
+            "www.samsung.com"
+          ],
+          "shortId": [
+            "05fdaa8a05be46a9"
+          ],
+          "publicKey": [
+            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-ЛОСУСАНЯ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "89.208.113.157",
+            "port": 443,
+            "users": [
+              {
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "parisjetaime.com"
+          ],
+          "shortId": [
+            "5be8210215"
+          ],
+          "publicKey": [
+            "2dgS9vJTywAfGZmlkuzDIIXLUR-E1A-0na8_W--ruUc"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-ЛОСУСАНЯ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "89.208.113.157",
+            "port": 443,
+            "users": [
+              {
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "parisjetaime.com"
+          ],
+          "shortId": [
+            "5be8210215"
+          ],
+          "publicKey": [
+            "2dgS9vJTywAfGZmlkuzDIIXLUR-E1A-0na8_W--ruUc"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-РАЧОМИКО",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "62.60.155.0",
+            "port": 443,
+            "users": [
+              {
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "telegraph.co.uk"
+          ],
+          "shortId": [
+            "deee73"
+          ],
+          "publicKey": [
+            "YD3G553bQP0uWuyYDY9ZvhLCmfF9tmKUo8MRuALEFUw"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-РАЧОМИКО",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "62.60.155.0",
+            "port": 443,
+            "users": [
+              {
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "telegraph.co.uk"
+          ],
+          "shortId": [
+            "deee73"
+          ],
+          "publicKey": [
+            "YD3G553bQP0uWuyYDY9ZvhLCmfF9tmKUo8MRuALEFUw"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-КОЛИТИКА",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "194.164.217.139",
+            "port": 448,
+            "users": [
+              {
+                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.samsung.com"
+          ],
+          "shortId": [
+            "05fdaa8a05be46a9"
+          ],
+          "publicKey": [
+            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-КОЛИТИКА",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "194.164.217.139",
+            "port": 448,
+            "users": [
+              {
+                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.samsung.com"
+          ],
+          "shortId": [
+            "05fdaa8a05be46a9"
+          ],
+          "publicKey": [
+            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-ЛУХИЛИКА",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "194.164.217.139",
+            "port": 448,
+            "users": [
+              {
+                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.samsung.com"
+          ],
+          "shortId": [
+            "05fdaa8a05be46a9"
+          ],
+          "publicKey": [
+            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-ЛУХИЛИКА",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "194.164.217.139",
+            "port": 448,
+            "users": [
+              {
+                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.samsung.com"
+          ],
+          "shortId": [
+            "05fdaa8a05be46a9"
+          ],
+          "publicKey": [
+            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-ЗУРИЗУЛЯ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "194.164.217.139",
+            "port": 448,
+            "users": [
+              {
+                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.samsung.com"
+          ],
+          "shortId": [
+            "05fdaa8a05be46a9"
+          ],
+          "publicKey": [
+            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-ЗУРИЗУЛЯ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "194.164.217.139",
+            "port": 448,
+            "users": [
+              {
+                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.samsung.com"
+          ],
+          "shortId": [
+            "05fdaa8a05be46a9"
+          ],
+          "publicKey": [
+            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-НОБАРУКО",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "194.164.217.139",
+            "port": 448,
+            "users": [
+              {
+                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.samsung.com"
+          ],
+          "shortId": [
+            "05fdaa8a05be46a9"
+          ],
+          "publicKey": [
+            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-НОБАРУКО",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "194.164.217.139",
+            "port": 448,
+            "users": [
+              {
+                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.samsung.com"
+          ],
+          "shortId": [
+            "05fdaa8a05be46a9"
+          ],
+          "publicKey": [
+            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-ПОХОХУУС",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "34.35.11.97",
+            "port": 24822,
+            "users": [
+              {
+                "id": "9c3f61dc-ab33-48d3-b829-bc1cad0f31f7",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.icloud.com"
+          ],
+          "shortId": [
+            "32a8bfa2939125"
+          ],
+          "publicKey": [
+            "tZ1ioVafOFT_0m30INlvEDNFSj6tcNnG21aJQRy3zVo"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-ПОХОХУУС",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "34.35.11.97",
+            "port": 24822,
+            "users": [
+              {
+                "id": "9c3f61dc-ab33-48d3-b829-bc1cad0f31f7",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.icloud.com"
+          ],
+          "shortId": [
+            "32a8bfa2939125"
+          ],
+          "publicKey": [
+            "tZ1ioVafOFT_0m30INlvEDNFSj6tcNnG21aJQRy3zVo"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-ДУРАНОКА",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "159.195.22.155",
+            "port": 443,
+            "users": [
+              {
+                "id": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "2.oncloudnineservicestreang.com"
+          ],
+          "shortId": [
+            "d8d3dc6c3ca45dd4"
+          ],
+          "publicKey": [
+            "Mg3ZxHNUFbX96q1HpS3WReeM7rnhEsXXtlEzxALeTDc"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-ДУРАНОКА",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "159.195.22.155",
+            "port": 443,
+            "users": [
+              {
+                "id": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "2.oncloudnineservicestreang.com"
+          ],
+          "shortId": [
+            "d8d3dc6c3ca45dd4"
+          ],
+          "publicKey": [
+            "Mg3ZxHNUFbX96q1HpS3WReeM7rnhEsXXtlEzxALeTDc"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-ЖОВУКИЛЯ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "34.213.172.16",
+            "port": 22189,
+            "users": [
+              {
+                "id": "4889ee33-74e5-4819-86d8-b2a1a5bc8f46",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.tesla.com"
+          ],
+          "shortId": [
+            "47b6d14ff477fe59"
+          ],
+          "publicKey": [
+            "5tUZskKOCKpjz3j7hmuYaQHNfE1QRtZI9P62qvSs1GY"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-ЖОВУКИЛЯ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "34.213.172.16",
+            "port": 22189,
+            "users": [
+              {
+                "id": "4889ee33-74e5-4819-86d8-b2a1a5bc8f46",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.tesla.com"
+          ],
+          "shortId": [
+            "47b6d14ff477fe59"
+          ],
+          "publicKey": [
+            "5tUZskKOCKpjz3j7hmuYaQHNfE1QRtZI9P62qvSs1GY"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-ЧОБАХОБО",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "34.213.172.16",
+            "port": 22189,
+            "users": [
+              {
+                "id": "4889ee33-74e5-4819-86d8-b2a1a5bc8f46",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.tesla.com"
+          ],
+          "shortId": [
+            "47b6d14ff477fe59"
+          ],
+          "publicKey": [
+            "5tUZskKOCKpjz3j7hmuYaQHNfE1QRtZI9P62qvSs1GY"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-ЧОБАХОБО",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "34.213.172.16",
+            "port": 22189,
+            "users": [
+              {
+                "id": "4889ee33-74e5-4819-86d8-b2a1a5bc8f46",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.tesla.com"
+          ],
+          "shortId": [
+            "47b6d14ff477fe59"
+          ],
+          "publicKey": [
+            "5tUZskKOCKpjz3j7hmuYaQHNfE1QRtZI9P62qvSs1GY"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-РУДОЧУБО",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "34.35.11.97",
+            "port": 24822,
+            "users": [
+              {
+                "id": "9c3f61dc-ab33-48d3-b829-bc1cad0f31f7",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.icloud.com"
+          ],
+          "shortId": [
+            "32a8bfa2939125"
+          ],
+          "publicKey": [
+            "tZ1ioVafOFT_0m30INlvEDNFSj6tcNnG21aJQRy3zVo"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-РУДОЧУБО",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "34.35.11.97",
+            "port": 24822,
+            "users": [
+              {
+                "id": "9c3f61dc-ab33-48d3-b829-bc1cad0f31f7",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.icloud.com"
+          ],
+          "shortId": [
+            "32a8bfa2939125"
+          ],
+          "publicKey": [
+            "tZ1ioVafOFT_0m30INlvEDNFSj6tcNnG21aJQRy3zVo"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-РОКИГЕПУ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "34.35.11.97",
+            "port": 24822,
+            "users": [
+              {
+                "id": "9c3f61dc-ab33-48d3-b829-bc1cad0f31f7",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.icloud.com"
+          ],
+          "shortId": [
+            "32a8bfa2939125"
+          ],
+          "publicKey": [
+            "tZ1ioVafOFT_0m30INlvEDNFSj6tcNnG21aJQRy3zVo"
+          ],
+          "fingerprint": [
+            "chrome"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-РОКИГЕПУ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "34.35.11.97",
+            "port": 24822,
+            "users": [
+              {
+                "id": "9c3f61dc-ab33-48d3-b829-bc1cad0f31f7",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "www.icloud.com"
+          ],
+          "shortId": [
+            "32a8bfa2939125"
+          ],
+          "publicKey": [
+            "tZ1ioVafOFT_0m30INlvEDNFSj6tcNnG21aJQRy3zVo"
+          ],
+          "fingerprint": [
+            "chrome"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-НУНУТУНЯ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "159.195.22.155",
+            "port": 443,
+            "users": [
+              {
+                "id": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "2.oncloudnineservicestreang.com"
+          ],
+          "shortId": [
+            "d8d3dc6c3ca45dd4"
+          ],
+          "publicKey": [
+            "Mg3ZxHNUFbX96q1HpS3WReeM7rnhEsXXtlEzxALeTDc"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-НУНУТУНЯ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "159.195.22.155",
+            "port": 443,
+            "users": [
+              {
+                "id": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "2.oncloudnineservicestreang.com"
+          ],
+          "shortId": [
+            "d8d3dc6c3ca45dd4"
+          ],
+          "publicKey": [
+            "Mg3ZxHNUFbX96q1HpS3WReeM7rnhEsXXtlEzxALeTDc"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-ТИНАРАНЯ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "159.195.22.155",
+            "port": 443,
+            "users": [
+              {
+                "id": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "2.oncloudnineservicestreang.com"
+          ],
+          "shortId": [
+            "d8d3dc6c3ca45dd4"
+          ],
+          "publicKey": [
+            "Mg3ZxHNUFbX96q1HpS3WReeM7rnhEsXXtlEzxALeTDc"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-ТИНАРАНЯ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "159.195.22.155",
+            "port": 443,
+            "users": [
+              {
+                "id": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "2.oncloudnineservicestreang.com"
+          ],
+          "shortId": [
+            "d8d3dc6c3ca45dd4"
+          ],
+          "publicKey": [
+            "Mg3ZxHNUFbX96q1HpS3WReeM7rnhEsXXtlEzxALeTDc"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-ЛИРУСОША",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "138.124.113.18",
+            "port": 443,
+            "users": [
+              {
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "iamsterdam.com"
+          ],
+          "shortId": [
+            "0aafc7b3b9"
+          ],
+          "publicKey": [
+            "1RFs75L42oUjmgEKqahFVrKKN52cosDkrWskT053D3o"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-ЛИРУСОША",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "138.124.113.18",
+            "port": 443,
+            "users": [
+              {
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "iamsterdam.com"
+          ],
+          "shortId": [
+            "0aafc7b3b9"
+          ],
+          "publicKey": [
+            "1RFs75L42oUjmgEKqahFVrKKN52cosDkrWskT053D3o"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-ВИДАРУЛЯ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "138.124.113.18",
+            "port": 443,
+            "users": [
+              {
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "iamsterdam.com"
+          ],
+          "shortId": [
+            "0aafc7b3b9"
+          ],
+          "publicKey": [
+            "1RFs75L42oUjmgEKqahFVrKKN52cosDkrWskT053D3o"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-ВИДАРУЛЯ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "138.124.113.18",
+            "port": 443,
+            "users": [
+              {
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "iamsterdam.com"
+          ],
+          "shortId": [
+            "0aafc7b3b9"
+          ],
+          "publicKey": [
+            "1RFs75L42oUjmgEKqahFVrKKN52cosDkrWskT053D3o"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-ГЕПОВЕКА",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "138.124.113.18",
+            "port": 443,
+            "users": [
+              {
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "iamsterdam.com"
+          ],
+          "shortId": [
+            "0aafc7b3b9"
+          ],
+          "publicKey": [
+            "1RFs75L42oUjmgEKqahFVrKKN52cosDkrWskT053D3o"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-ГЕПОВЕКА",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "138.124.113.18",
+            "port": 443,
+            "users": [
+              {
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "iamsterdam.com"
+          ],
+          "shortId": [
+            "0aafc7b3b9"
+          ],
+          "publicKey": [
+            "1RFs75L42oUjmgEKqahFVrKKN52cosDkrWskT053D3o"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-ЖАМАКОНЯ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "138.124.113.18",
+            "port": 443,
+            "users": [
+              {
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "iamsterdam.com"
+          ],
+          "shortId": [
+            "0aafc7b3b9"
+          ],
+          "publicKey": [
+            "1RFs75L42oUjmgEKqahFVrKKN52cosDkrWskT053D3o"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-ЖАМАКОНЯ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "138.124.113.18",
+            "port": 443,
+            "users": [
+              {
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "iamsterdam.com"
+          ],
+          "shortId": [
+            "0aafc7b3b9"
+          ],
+          "publicKey": [
+            "1RFs75L42oUjmgEKqahFVrKKN52cosDkrWskT053D3o"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "p1-ЧАЛИТУЖЕ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "138.124.113.18",
+            "port": 443,
+            "users": [
+              {
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "iamsterdam.com"
+          ],
+          "shortId": [
+            "0aafc7b3b9"
+          ],
+          "publicKey": [
+            "1RFs75L42oUjmgEKqahFVrKKN52cosDkrWskT053D3o"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-ЧАЛИТУЖЕ",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "138.124.113.18",
+            "port": 443,
+            "users": [
+              {
+                "id": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
+                "encryption": [
+                  "none"
+                ],
+                "flow": [
+                  "xtls-rprx-vision"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": [
+          "tcp"
+        ],
+        "security": [
+          "reality"
+        ],
+        "tcpSettings": {
+          "header": {
+            "type": [
+              "none"
+            ]
+          }
+        },
+        "realitySettings": {
+          "serverName": [
+            "iamsterdam.com"
+          ],
+          "shortId": [
+            "0aafc7b3b9"
+          ],
+          "publicKey": [
+            "1RFs75L42oUjmgEKqahFVrKKN52cosDkrWskT053D3o"
+          ],
+          "fingerprint": [
+            "firefox"
+          ],
           "spiderX": "/"
         }
       }
@@ -216,28 +2302,7 @@
       {
         "type": "field",
         "domain": [
-          "domain:ru",
-          "domain:yandex.com",
-          "domain:yandex.net",
-          "domain:yango.com",
-          "domain:vk.com",
-          "domain:vk.cc",
-          "domain:mvk.com",
-          "domain:my.games",
-          "domain:ok.me",
-          "domain:kaspersky.com",
-          "domain:wildberries.by",
-          "domain:2gis.com",
-          "domain:magnit.com",
-          "domain:x5.tech",
-          "domain:moex.com",
-          "domain:okko.tv",
-          "domain:okko.sport",
-          "domain:boosty.to",
-          "domain:premier.one",
-          "domain:hh.by",
-          "domain:hh.kz",
-          "domain:avs.io"
+          "domain:ru"
         ],
         "outboundTag": "direct"
       },
