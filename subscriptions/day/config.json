@@ -1,5 +1,5 @@
 {
-  "remarks": "🇪🇺 Автовыбор (Только P1 с резервом)",
+  "remarks": "🇪🇺 Автовыбор",
   "dns": {
     "servers": [
       "1.1.1.1",
@@ -45,7 +45,8 @@
   ],
   "observatory": {
     "subjectSelector": [
-      "p1-"
+      "p1-",
+      "tier3-"
     ],
     "probeUrl": "https://cloudflare.com",
     "probeInterval": "1m",
@@ -68,16 +69,16 @@
       }
     },
     {
-      "tag": "p1-НОБАРУКО",
+      "tag": "p1-frda-fLkVmG7fik",
       "protocol": "vless",
       "settings": {
         "vnext": [
           {
-            "address": "194.164.217.139",
-            "port": 448,
+            "address": "2.26.129.246",
+            "port": 443,
             "users": [
               {
-                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "id": "ec54f4bd-2458-4f88-a2ed-3878d87dfa1f",
                 "encryption": "none",
                 "flow": "xtls-rprx-vision"
               }
@@ -94,25 +95,25 @@
           }
         },
         "realitySettings": {
-          "serverName": "://samsung.com",
-          "shortId": "05fdaa8a05be46a9",
-          "publicKey": "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo",
-          "fingerprint": "firefox",
+          "serverName": "ukrop.mycdn-me.ru",
+          "shortId": "5a8e1a04f3d92b67",
+          "publicKey": "gPTBA-gVUWAK9yziB_v_sGSncm0LwBQvEAsTQZK4jEE",
+          "fingerprint": "qq",
           "spiderX": "/"
         }
       }
     },
     {
-      "tag": "p1-ВУЗАНУКО",
+      "tag": "p1-germany-1-DW9tXcDyuS",
       "protocol": "vless",
       "settings": {
         "vnext": [
           {
-            "address": "194.164.217.139",
-            "port": 448,
+            "address": "2.26.135.193",
+            "port": 443,
             "users": [
               {
-                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "id": "ec54f4bd-2458-4f88-a2ed-3878d87dfa1f",
                 "encryption": "none",
                 "flow": "xtls-rprx-vision"
               }
@@ -129,10 +130,45 @@
           }
         },
         "realitySettings": {
-          "serverName": "://samsung.com",
-          "shortId": "05fdaa8a05be46a9",
-          "publicKey": "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo",
-          "fingerprint": "firefox",
+          "serverName": "smorodina.mycdn-me.ru",
+          "shortId": "a1f9c0e21d7b6485",
+          "publicKey": "09O8bAlIWm9AGnNyxBtHwpYNQxlXPSQeQeKzS3ZMwGE",
+          "fingerprint": "qq",
+          "spiderX": "/"
+        }
+      }
+    },
+    {
+      "tag": "tier3-mt-WU5gmTpT9E",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "178.248.235.173",
+            "port": 28443,
+            "users": [
+              {
+                "id": "ec54f4bd-2458-4f88-a2ed-3878d87dfa1f",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
+        },
+        "realitySettings": {
+          "serverName": "rutube.ru",
+          "shortId": "11c8a9e2d47b03af",
+          "publicKey": "PmezavnEpH4TEbt8A4qlrESwZ0qJJ2X0_RHKu9Bqe1g",
+          "fingerprint": "qq",
           "spiderX": "/"
         }
       }
@@ -146,41 +182,26 @@
         "type": "field",
         "domain": [
           "domain:ru",
-          "domain:su",
-          "domain:xn--p1ai",
-          "domain:moscow",
-          "domain:ya.cc",
           "domain:yandex.com",
           "domain:yandex.net",
           "domain:yango.com",
           "domain:vk.com",
           "domain:vk.cc",
           "domain:mvk.com",
-          "domain:mycdn.me",
-          "domain:my.com",
           "domain:my.games",
           "domain:ok.me",
           "domain:kaspersky.com",
-          "domain:ozon.com",
-          "domain:ozon.by",
-          "domain:ozon.kz",
           "domain:wildberries.by",
-          "domain:wildberries.kz",
           "domain:2gis.com",
           "domain:magnit.com",
-          "domain:fix-price.com",
           "domain:x5.tech",
-          "domain:megafon.com",
           "domain:moex.com",
           "domain:okko.tv",
           "domain:okko.sport",
           "domain:boosty.to",
-          "domain:lenta.com",
-          "domain:meduza.io",
           "domain:premier.one",
           "domain:hh.by",
           "domain:hh.kz",
-          "domain:mosmetro.tech",
           "domain:avs.io"
         ],
         "outboundTag": "direct"
@@ -201,7 +222,11 @@
       {
         "type": "field",
         "inboundTag": [
-          "socks"
+          "socks-in",
+          "http-in",
+          "socks",
+          "http",
+          "tun-in"
         ],
         "network": "tcp,udp",
         "balancerTag": "lb_ping"
@@ -232,7 +257,7 @@
       {
         "tag": "lb_tier3",
         "selector": [
-          "p1-"
+          "tier3-"
         ],
         "strategy": {
           "type": "leastLoad"
