@@ -1,5 +1,5 @@
 {
-  "remarks": "🇪🇺 Автовыбор + Антиреклама",
+  "remarks": "🇪🇺 Автовыбор",
   "dns": {
     "servers": [
       "1.1.1.1",
@@ -48,7 +48,7 @@
       "p1-",
       "tier3-"
     ],
-    "probeUrl": "https://cloudflare.com",
+    "probeUrl": "https://cp.cloudflare.com/",
     "probeInterval": "1m",
     "enableConcurrency": true
   },
@@ -139,6 +139,41 @@
       }
     },
     {
+      "tag": "tier3-cu2-xQmyCpTCEh",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "178.248.235.173",
+            "port": 28443,
+            "users": [
+              {
+                "id": "ec54f4bd-2458-4f88-a2ed-3878d87dfa1f",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
+        },
+        "realitySettings": {
+          "serverName": "rutube.ru",
+          "shortId": "11c8a9e2d47b03af",
+          "publicKey": "PmezavnEpH4TEbt8A4qlrESwZ0qJJ2X0_RHKu9Bqe1g",
+          "fingerprint": "qq",
+          "spiderX": "/"
+        }
+      }
+    },
+    {
       "tag": "tier3-mt-WU5gmTpT9E",
       "protocol": "vless",
       "settings": {
@@ -181,34 +216,42 @@
       {
         "type": "field",
         "domain": [
-          "geosite:category-ads-all"
-          ],
-        "outboundTag": "block"
-      },
-      {
-        "type": "field",
-        "domain": [
           "domain:ru",
+          "domain:su",
+          "domain:xn--p1ai",
+          "domain:moscow",
+          "domain:ya.cc",
           "domain:yandex.com",
           "domain:yandex.net",
           "domain:yango.com",
           "domain:vk.com",
           "domain:vk.cc",
           "domain:mvk.com",
+          "domain:mycdn.me",
+          "domain:my.com",
           "domain:my.games",
           "domain:ok.me",
           "domain:kaspersky.com",
+          "domain:ozon.com",
+          "domain:ozon.by",
+          "domain:ozon.kz",
           "domain:wildberries.by",
+          "domain:wildberries.kz",
           "domain:2gis.com",
           "domain:magnit.com",
+          "domain:fix-price.com",
           "domain:x5.tech",
+          "domain:megafon.com",
           "domain:moex.com",
           "domain:okko.tv",
           "domain:okko.sport",
           "domain:boosty.to",
+          "domain:lenta.com",
+          "domain:meduza.io",
           "domain:premier.one",
           "domain:hh.by",
           "domain:hh.kz",
+          "domain:mosmetro.tech",
           "domain:avs.io"
         ],
         "outboundTag": "direct"
