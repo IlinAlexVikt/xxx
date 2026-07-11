@@ -1,7 +1,0 @@
-#profile-title: from 2026_07_05
-#profile-update-interval: 1
-#subscription-userinfo: upload=0; download=0; total=10737418240000; expire=1783457999
-#support-url: https://
-#profile-web-page-url: https://
-#announce: "Привет халявщики и тунеядцы"
-vless://0000@8.8.8.8:443?type=xhttp&headerType=none&security=tls&encryption=none&fp=chrome&alpn=h2%2Chttp%2F1.1&path=%2F&insecure=0#ПОДПИСКА КАЮК
