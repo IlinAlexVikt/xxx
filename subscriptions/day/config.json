@@ -1,956 +1,174 @@
 {
+  "remarks": "🇪🇺 Автовыбор b1 + HTTP + Блокировка рекламы",
   "log": {
-    "level": "warn"
+    "loglevel": "warning"
   },
   "dns": {
     "servers": [
-      {
-        "tag": "dns-remote",
-        "address": "https://1.1.1.1",
-        "detour": "b1-balancer"
-      },
-      {
-        "tag": "dns-direct",
-        "address": "8.8.8.8",
-        "detour": "direct"
-      }
+      "1.1.1.1",
+      "8.8.8.8",
+      "8.8.4.4"
     ],
-    "rules": [
-      {
-        "domain_suffix": [
-          ".ru",
-          ".su",
-          ".xn--p1ai",
-          "yandex.ru",
-          "vk.com",
-          "ozon.ru",
-          "gosuslugi.ru"
-        ],
-        "server": "dns-direct"
-      }
-    ]
+    "queryStrategy": "UseIPv4"
   },
   "inbounds": [
     {
-      "type": "socks",
-      "tag": "socks-in",
+      "tag": "socks",
+      "port": 10808,
       "listen": "127.0.0.1",
-      "listen_port": 10808,
-      "sniff": true
+      "protocol": "socks",
+      "settings": {
+        "udp": true,
+        "auth": "noauth"
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ]
+      }
     },
     {
-      "type": "http",
       "tag": "http-in",
+      "port": 10809,
       "listen": "127.0.0.1",
-      "listen_port": 10809,
-      "sniff": true
+      "protocol": "http",
+      "settings": {
+        "timeout": 300
+      },
+      "sniffing": {
+        "enabled": true,
+        "routeOnly": true,
+        "destOverride": [
+          "http",
+          "tls",
+          "quic"
+        ]
+      }
     }
   ],
+  "observatory": {
+    "subjectSelector": [
+      "b1-"
+    ],
+    "probeUrl": "https://cloudflare.com",
+    "probeInterval": "1m",
+    "enableConcurrency": true
+  },
   "outbounds": [
     {
-      "type": "vless",
-      "tag": "b1-ВУЗАНУКО",
-      "server": "194.164.217.139",
-      "server_port": 448,
-      "uuid": "d61b4e1b-4745-484f-8362-18537825a7af",
-      "flow": "xtls-rprx-vision",
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "www.samsung.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
-          ],
-          "short_id": [
-            "05fdaa8a05be46a9"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-ЗУРИЗУЛЯ",
-      "server": "194.164.217.139",
-      "server_port": 448,
-      "uuid": "d61b4e1b-4745-484f-8362-18537825a7af",
-      "flow": "xtls-rprx-vision",
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "www.samsung.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
-          ],
-          "short_id": [
-            "05fdaa8a05be46a9"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-МУТУМИША",
-      "server": "159.195.22.155",
-      "server_port": 443,
-      "uuid": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "2.oncloudnineservicestreang.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "Mg3ZxHNUFbX96q1HpS3WReeM7rnhEsXXtlEzxALeTDc"
-          ],
-          "short_id": [
-            "d8d3dc6c3ca45dd4"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-НОБАРУКО",
-      "server": "194.164.217.139",
-      "server_port": 448,
-      "uuid": "d61b4e1b-4745-484f-8362-18537825a7af",
-      "flow": "xtls-rprx-vision",
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "www.samsung.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
-          ],
-          "short_id": [
-            "05fdaa8a05be46a9"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-ДУШОТАБО",
-      "server": "89.208.113.157",
-      "server_port": 443,
-      "uuid": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "parisjetaime.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "2dgS9vJTywAfGZmlkuzDIIXLUR-E1A-0na8_W--ruUc"
-          ],
-          "short_id": [
-            "5be8210215"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-ЛОСУСАНЯ",
-      "server": "89.208.113.157",
-      "server_port": 443,
-      "uuid": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "parisjetaime.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "2dgS9vJTywAfGZmlkuzDIIXLUR-E1A-0na8_W--ruUc"
-          ],
-          "short_id": [
-            "5be8210215"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-КОЛИТИКА",
-      "server": "194.164.217.139",
-      "server_port": 448,
-      "uuid": "d61b4e1b-4745-484f-8362-18537825a7af",
-      "flow": "xtls-rprx-vision",
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "www.samsung.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
-          ],
-          "short_id": [
-            "05fdaa8a05be46a9"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
       "tag": "b1-ЛУХИЛИКА",
-      "server": "194.164.217.139",
-      "server_port": 448,
-      "uuid": "d61b4e1b-4745-484f-8362-18537825a7af",
-      "flow": "xtls-rprx-vision",
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "www.samsung.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "194.164.217.139",
+            "port": 448,
+            "users": [
+              {
+                "id": "d61b4e1b-4745-484f-8362-18537825a7af",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
         },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo"
-          ],
-          "short_id": [
-            "05fdaa8a05be46a9"
-          ]
+        "realitySettings": {
+          "serverName": "www.samsung.com",
+          "shortId": "05fdaa8a05be46a9",
+          "publicKey": "fjPED4_A_EQrL8PAuBUi9ChoNbY2OC4mUl7r8zaLoxo",
+          "fingerprint": "firefox",
+          "spiderX": "/"
         }
       }
     },
     {
-      "type": "vless",
-      "tag": "b1-ЧОГОБУКА",
-      "server": "159.195.22.155",
-      "server_port": 443,
-      "uuid": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "2.oncloudnineservicestreang.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
+      "tag": "b1-ДУРАНОКА",
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "159.195.22.155",
+            "port": 443,
+            "users": [
+              {
+                "id": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
+                "encryption": "none",
+                "flow": "xtls-rprx-vision"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "tcp",
+        "security": "reality",
+        "tcpSettings": {
+          "header": {
+            "type": "none"
+          }
         },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "Mg3ZxHNUFbX96q1HpS3WReeM7rnhEsXXtlEzxALeTDc"
-          ],
-          "short_id": [
-            "d8d3dc6c3ca45dd4"
-          ]
+        "realitySettings": {
+          "serverName": "2.oncloudnineservicestreang.com",
+          "shortId": "d8d3dc6c3ca45dd4",
+          "publicKey": "Mg3ZxHNUFbX96q1HpS3WReeM7rnhEsXXtlEzxALeTDc",
+          "fingerprint": "firefox",
+          "spiderX": "/"
         }
       }
     },
     {
-      "type": "vless",
-      "tag": "b1-БЕРИНАКА",
-      "server": "159.195.22.155",
-      "server_port": 443,
-      "uuid": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "2.oncloudnineservicestreang.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "Mg3ZxHNUFbX96q1HpS3WReeM7rnhEsXXtlEzxALeTDc"
-          ],
-          "short_id": [
-            "d8d3dc6c3ca45dd4"
-          ]
-        }
-      }
+      "tag": "direct",
+      "protocol": "freedom",
+      "settings": {}
     },
     {
-      "type": "vless",
-      "tag": "b1-ДАЗУЧУКО",
-      "server": "159.195.22.155",
-      "server_port": 443,
-      "uuid": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "2.oncloudnineservicestreang.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "Mg3ZxHNUFbX96q1HpS3WReeM7rnhEsXXtlEzxALeTDc"
-          ],
-          "short_id": [
-            "d8d3dc6c3ca45dd4"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-РАЧОМИКО",
-      "server": "62.60.155.0",
-      "server_port": 443,
-      "uuid": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "telegraph.co.uk"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "YD3G553bQP0uWuyYDY9ZvhLCmfF9tmKUo8MRuALEFUw"
-          ],
-          "short_id": [
-            "deee73"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-ТОНОСУЛЯ",
-      "server": "159.195.22.155",
-      "server_port": 443,
-      "uuid": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "2.oncloudnineservicestreang.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "Mg3ZxHNUFbX96q1HpS3WReeM7rnhEsXXtlEzxALeTDc"
-          ],
-          "short_id": [
-            "d8d3dc6c3ca45dd4"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-ТИНАРАНЯ",
-      "server": "159.195.22.155",
-      "server_port": 443,
-      "uuid": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "2.oncloudnineservicestreang.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "Mg3ZxHNUFbX96q1HpS3WReeM7rnhEsXXtlEzxALeTDc"
-          ],
-          "short_id": [
-            "d8d3dc6c3ca45dd4"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-НОЖОДУЖЕ",
-      "server": "159.195.46.178",
-      "server_port": 443,
-      "uuid": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "4.oncloudnineservicestreang.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "P5ceHLOW8Gmz45z-ozbm9T6xsdSsIGLB71-jMfSjCBQ"
-          ],
-          "short_id": [
-            "04bc695105689674"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-ЧОБАХОБО",
-      "server": "34.213.172.16",
-      "server_port": 22189,
-      "uuid": "4889ee33-74e5-4819-86d8-b2a1a5bc8f46",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "www.tesla.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "5tUZskKOCKpjz3j7hmuYaQHNfE1QRtZI9P62qvSs1GY"
-          ],
-          "short_id": [
-            "47b6d14ff477fe59"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-РУДОЧУБО",
-      "server": "34.35.11.97",
-      "server_port": 24822,
-      "uuid": "9c3f61dc-ab33-48d3-b829-bc1cad0f31f7",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "www.icloud.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "tZ1ioVafOFT_0m30INlvEDNFSj6tcNnG21aJQRy3zVo"
-          ],
-          "short_id": [
-            "32a8bfa2939125"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-РОКИГЕПУ",
-      "server": "34.35.11.97",
-      "server_port": 24822,
-      "uuid": "9c3f61dc-ab33-48d3-b829-bc1cad0f31f7",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "www.icloud.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "tZ1ioVafOFT_0m30INlvEDNFSj6tcNnG21aJQRy3zVo"
-          ],
-          "short_id": [
-            "32a8bfa2939125"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-СОШУТАНЯ",
-      "server": "159.195.46.178",
-      "server_port": 443,
-      "uuid": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "4.oncloudnineservicestreang.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "P5ceHLOW8Gmz45z-ozbm9T6xsdSsIGLB71-jMfSjCBQ"
-          ],
-          "short_id": [
-            "04bc695105689674"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-ПОХОХУУС",
-      "server": "34.35.11.97",
-      "server_port": 24822,
-      "uuid": "9c3f61dc-ab33-48d3-b829-bc1cad0f31f7",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "www.icloud.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "tZ1ioVafOFT_0m30INlvEDNFSj6tcNnG21aJQRy3zVo"
-          ],
-          "short_id": [
-            "32a8bfa2939125"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-БИМОМИБА",
-      "server": "159.195.46.178",
-      "server_port": 443,
-      "uuid": "859a537b-09cf-4bce-8da4-ecbb72950e3a",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "4.oncloudnineservicestreang.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "P5ceHLOW8Gmz45z-ozbm9T6xsdSsIGLB71-jMfSjCBQ"
-          ],
-          "short_id": [
-            "04bc695105689674"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-ЖОВУКИЛЯ",
-      "server": "34.213.172.16",
-      "server_port": 22189,
-      "uuid": "4889ee33-74e5-4819-86d8-b2a1a5bc8f46",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "www.tesla.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "5tUZskKOCKpjz3j7hmuYaQHNfE1QRtZI9P62qvSs1GY"
-          ],
-          "short_id": [
-            "47b6d14ff477fe59"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-МИЛИЧАКА",
-      "server": "85.208.139.100",
-      "server_port": 443,
-      "uuid": "612c872d-1370-4109-8644-f0755f97e33f",
-      "flow": "xtls-rprx-vision",
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "www.samsung.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "GzOdZG9TCQSrZV7ivcmOq9tKWUf37QnoTxSHf32OfAs"
-          ],
-          "short_id": [
-            "16"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-ВИДАРУЛЯ",
-      "server": "138.124.113.18",
-      "server_port": 443,
-      "uuid": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "iamsterdam.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "1RFs75L42oUjmgEKqahFVrKKN52cosDkrWskT053D3o"
-          ],
-          "short_id": [
-            "0aafc7b3b9"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-ЛИРУСОША",
-      "server": "138.124.113.18",
-      "server_port": 443,
-      "uuid": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "iamsterdam.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "1RFs75L42oUjmgEKqahFVrKKN52cosDkrWskT053D3o"
-          ],
-          "short_id": [
-            "0aafc7b3b9"
-          ]
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "b1-ЧАЛИТУЖЕ",
-      "server": "138.124.113.18",
-      "server_port": 443,
-      "uuid": "1f4c983e-382c-d2fa-b2dc-7981f02b34de",
-      "flow": [
-        "xtls-rprx-vision"
-      ],
-      "network": [
-        "tcp"
-      ],
-      "tls": {
-        "enabled": false,
-        "server_name": [
-          "iamsterdam.com"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": [
-            "firefox"
-          ]
-        },
-        "reality": {
-          "enabled": false,
-          "public_key": [
-            "1RFs75L42oUjmgEKqahFVrKKN52cosDkrWskT053D3o"
-          ],
-          "short_id": [
-            "0aafc7b3b9"
-          ]
-        }
-      }
-    },
-    {
-      "type": "direct",
-      "tag": "direct"
-    },
-    {
-      "type": "block",
-      "tag": "block"
+      "tag": "block",
+      "protocol": "blackhole",
+      "settings": {}
     }
   ],
-  "route": {
+  "routing": {
+    "domainMatcher": "hybrid",
+    "domainStrategy": "AsIs",
     "rules": [
       {
-        "geosite": [
-          "category-ads-all",
-          "win-spy",
-          "win-update",
-          "category-malicious",
-          "category-phishing"
+        "type": "field",
+        "domain": [
+          "geosite:category-ads-all",
+          "geosite:win-spy",
+          "geosite:win-update",
+          "geosite:category-malicious",
+          "geosite:category-phishing"
         ],
-        "outbound": "block"
+        "outboundTag": "block"
       },
       {
-        "domain_suffix": [
-          ".ru",
-          ".su",
-          ".xn--p1ai",
-          ".moscow",
-          "ya.cc",
-          "yandex.com",
-          "yandex.net",
-          "yango.com",
-          "vk.com",
-          "vk.cc",
-          "mvk.com",
+        "type": "field",
+        "domain": [
+          "domain:ru",
+          "domain:su",
+          "domain:xn--p1ai",
+          "domain:moscow",
+          "domain:ya.cc",
+          "domain:yandex.com",
+          "domain:yandex.net",
+          "domain:yango.com",
+          "domain:vk.com",
+          "domain:vk.cc",
+          "domain:mvk.com",
           "mycdn.me",
           "my.com",
           "my.games",
@@ -962,63 +180,55 @@
           "wildberries.by",
           "wildberries.kz",
           "2gis.com",
-          "magnit.com",
-          "fix-price.com",
-          "x5.tech",
-          "megafon.com",
-          "moex.com",
-          "okko.tv",
-          "okko.sport",
-          "boosty.to",
-          "lenta.com",
-          "meduza.io",
-          "premier.one",
-          "hh.by",
-          "hh.kz",
-          "mosmetro.tech",
-          "avs.io"
+          "domain:magnit.com",
+          "domain:fix-price.com",
+          "domain:x5.tech",
+          "domain:megafon.com",
+          "domain:moex.com",
+          "domain:okko.tv",
+          "domain:okko.sport",
+          "domain:boosty.to",
+          "domain:lenta.com",
+          "domain:meduza.io",
+          "domain:premier.one",
+          "domain:hh.by",
+          "domain:hh.kz",
+          "domain:mosmetro.tech",
+          "domain:avs.io"
         ],
-        "outbound": "direct"
+        "outboundTag": "direct"
       },
       {
-        "protocol": "bittorrent",
-        "outbound": "direct"
+        "type": "field",
+        "protocol": [
+          "bittorrent"
+        ],
+        "outboundTag": "direct"
+      },
+      {
+        "type": "field",
+        "inboundTag": [
+          "socks",
+          "http-in"
+        ],
+        "network": "tcp,udp",
+        "balancerTag": "lb_b1_ping"
       }
     ],
     "balancers": [
       {
-        "tag": "b1-balancer",
+        "tag": "lb_b1_ping",
         "selector": [
-          "b1-ВУЗАНУКО",
-          "b1-ЗУРИЗУЛЯ",
-          "b1-МУТУМИША",
-          "b1-НОБАРУКО",
-          "b1-ДУШОТАБО",
-          "b1-ЛОСУСАНЯ",
-          "b1-КОЛИТИКА",
-          "b1-ЛУХИЛИКА",
-          "b1-ЧОГОБУКА",
-          "b1-БЕРИНАКА",
-          "b1-ДАЗУЧУКО",
-          "b1-РАЧОМИКО",
-          "b1-ТОНОСУЛЯ",
-          "b1-ТИНАРАНЯ",
-          "b1-НОЖОДУЖЕ",
-          "b1-ЧОБАХОБО",
-          "b1-РУДОЧУБО",
-          "b1-РОКИГЕПУ",
-          "b1-СОШУТАНЯ",
-          "b1-ПОХОХУУС",
-          "b1-БИМОМИБА",
-          "b1-ЖОВУКИЛЯ",
-          "b1-МИЛИЧАКА",
-          "b1-ВИДАРУЛЯ",
-          "b1-ЛИРУСОША",
-          "b1-ЧАЛИТУЖЕ"
+          "b1-"
         ],
-        "strategy": "round-robin"
+        "strategy": {
+          "type": "leastLoad",
+          "settings": {
+            "maxRTT": "3s",
+            "cost_step": 0
+          }
+        }
       }
-    ],
-    "final": "b1-balancer"
+    ]
   }
 }
