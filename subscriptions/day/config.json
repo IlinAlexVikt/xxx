@@ -216,7 +216,14 @@
       {
         "type": "field",
         "domain": [
-          "geosite:category-ads-all"
+          "geosite:category-ads-all",
+          "domain:doubleclick.net",
+          "domain:googleadservices.com",
+          "domain:googlesyndication.com",
+          "domain:yandex-adexchange.net",
+          "domain:rutube.ru/api/video/advertising",
+          "domain:rle.ru",
+          "domain:adfox.ru"
         ],
         "ip": [
           "geoip:private"
