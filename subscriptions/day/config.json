@@ -1,5 +1,5 @@
 {
-  "remarks": "🇪🇺 Автовыбор",
+  "remarks": "🇪🇺 Автовыбор + Антиреклама",
   "dns": {
     "servers": [
       "1.1.1.1",
@@ -178,6 +178,13 @@
     "domainMatcher": "hybrid",
     "domainStrategy": "AsIs",
     "rules": [
+      {
+        "type": "field",
+        "domain": [
+          "geosite:category-ads-all"
+        ],
+        "outboundTag": "block"
+      },
       {
         "type": "field",
         "domain": [
