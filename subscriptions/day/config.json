@@ -1,5 +1,5 @@
 {
-  "remarks": "🇪🇺 Автовыбор + Антибаннер",
+  "remarks": "🇪🇺 Автовыбор + Антибаннер (Full)",
   "dns": {
     "servers": [
       "1.1.1.1",
@@ -159,6 +159,13 @@
     "domainMatcher": "hybrid",
     "domainStrategy": "AsIs",
     "rules": [
+      {
+        "type": "field",
+        "inboundTag": [
+          "internal"
+        ],
+        "balancerTag": "lb_ping"
+      },
       {
         "type": "field",
         "domain": [
