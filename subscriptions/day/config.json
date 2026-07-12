@@ -1,5 +1,5 @@
 {
-  "remarks": "🇪🇺 Автовыбор + Антибаннер (Финал)",
+  "remarks": "🇪🇺 Автовыбор + Антибаннер (Fixed)",
   "dns": {
     "servers": [
       "1.1.1.1",
@@ -168,7 +168,7 @@
       {
         "type": "field",
         "domain": [
-          "geosite:category-ads-all"
+          "geosite:category-ads"
         ],
         "outboundTag": "block"
       },
