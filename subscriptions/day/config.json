@@ -1,5 +1,5 @@
 {
-  "remarks": "🇪🇺 Автовыбор + Антибаннер (Fixed)",
+  "remarks": "🇪🇺 Автовыбор + Антибаннер (Финал)",
   "dns": {
     "servers": [
       "1.1.1.1",
@@ -37,8 +37,7 @@
       "b1-"
     ],
     "probeUrl": "https://cloudflare.com",
-    "probeInterval": "1m",
-    "enableConcurrency": true
+    "probeInterval": "1m"
   },
   "outbounds": [
     {
@@ -156,13 +155,13 @@
     }
   ],
   "routing": {
-    "domainMatcher": "hybrid",
     "domainStrategy": "AsIs",
     "rules": [
       {
         "type": "field",
         "domain": [
-          "domain:cloudflare.com"
+          "domain:://cloudflare.com",
+          "domain:google.com"
         ],
         "balancerTag": "lb_ping"
       },
@@ -232,11 +231,7 @@
           "b1-"
         ],
         "strategy": {
-          "type": "latency",
-          "settings": {
-            "maxRTT": "3s",
-            "tolerance": 50
-          }
+          "type": "leastPing"
         }
       }
     ]
