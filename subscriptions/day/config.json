@@ -1,5 +1,5 @@
 {
-  "remarks": "🇪🇺 Автовыбор",
+  "remarks": "🇪🇺 Автовыбор + Антибаннер",
   "dns": {
     "servers": [
       "1.1.1.1",
@@ -162,6 +162,13 @@
       {
         "type": "field",
         "domain": [
+          "geosite:category-ads-all"
+        ],
+        "outboundTag": "block"
+      },
+      {
+        "type": "field",
+        "domain": [
           "domain:ru",
           "domain:yandex.com",
           "domain:yandex.net",
@@ -195,19 +202,17 @@
         "outboundTag": "direct"
       },
       {
+        "type": "field",
         "ip": [
-          "89.208.85.188"
+          "89.208.85.188",
+          "geoip:private"
         ],
         "outboundTag": "direct"
       },
       {
         "type": "field",
         "inboundTag": [
-          "socks-in",
-          "http-in",
-          "socks",
-          "http",
-          "tun-in"
+          "socks"
         ],
         "network": "tcp,udp",
         "balancerTag": "lb_ping"
@@ -220,10 +225,10 @@
           "b1-"
         ],
         "strategy": {
-          "type": "leastLoad",
+          "type": "latency",
           "settings": {
             "maxRTT": "3s",
-            "cost_step": 0
+            "tolerance": 50
           }
         }
       }
